@@ -1,0 +1,27 @@
+.hm-staff-info-main {
+    .hm-card-header-label {
+        .fa {
+            background: #665AA6;
+            border-radius: 50%;
+        }
+    }
+    .staff-login,
+    .staff-task {
+        color: #fff;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        border-radius: 5px;
+        padding-left: 1rem;
+        background: #988ED4;
+    }
+    .today-login-wrapper,
+    .today-new-customer-wrapper {
+        .hm-card-header {
+            border-radius: 5px;
+            border: none;
+        }
+        .hm-card-body {
+            padding: 0;
+        }
+    }
+}

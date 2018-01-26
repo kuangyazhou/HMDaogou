@@ -1,0 +1,70 @@
+.staff-sale-main {
+    .hm-card-container:last-child {
+        margin-bottom: 3.0625rem;
+    }
+    .hm-progress-rank-title {
+        .name {
+            flex: 3;
+            -webkit-flex: 3; 
+        }
+        .count {
+            flex: 1;
+            -webkit-flex: 1;
+        }
+    }
+    .detail-list {
+        display: flex;
+        display: -webkit-flex;
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+        li {
+            width: 50%;
+            font-size: .8rem;
+            text-align: center;
+            .sale-money {
+                p {
+                    font-size: .8rem;
+                    color: #999999;
+                    span {
+                        margin-left: .5rem;
+                    }
+                }
+                P:first-child {
+                    span {
+                        color: #48B1FF;
+                        font-size: 1rem;
+                    }
+                }
+                p:last-child {
+                    span {
+                        color: #666666;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+        li:first-child,
+        li:nth-child(2) {
+            border-bottom: 1px solid #F2F2F2;
+            .sale-money {
+                margin-bottom: .5rem;
+            }
+        }
+        li:first-child,
+        li:nth-child(3) {
+            .sale-money {
+                border-right: 1px solid #F2F2F2;
+            }
+        }
+        li:nth-child(3),
+        li:nth-child(4) {
+            .sale-title {
+                margin-top: .5rem;
+            }
+        }
+    }
+
+   
+}

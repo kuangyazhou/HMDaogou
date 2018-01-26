@@ -1,0 +1,67 @@
+.hm-coupon-container {
+    overflow: scroll;
+}
+
+.hm-coupon-list {
+    background: transparent;
+    margin-top: 1rem;
+    li {
+        margin-bottom: 1rem;
+        padding: .5rem;
+        a {
+            border-radius: 10px;
+            display: flex;
+            display: -webkit-flex;
+            .left {
+                width: 70%;
+                background: #F76979;
+                padding: .5rem;
+                color: #fff;
+                .border {
+                    border: 1px dotted #fff;
+                    padding: .5rem;
+                    b {
+                        font-size: 2rem;
+                        margin-right: .5rem;
+                    }
+                }
+            }
+            .right {
+                background: #FCEFBB;
+                width: 30%;
+                display: -webkit-flex;
+                display: flex;
+                align-items: center;
+                -webkit-align-items: center;
+                flex-direction: column;
+                -webkit-flex-direction: column;
+                justify-content: center;
+                -webkit-justify-content: center;
+                span {
+                    color: #F66979;
+                }
+                button {
+                    background: #F66979;
+                    color: #fff;
+                    border-radius: 30px;
+                    outline: none;
+                    border: none;
+                    padding: .2rem 1rem;
+                }
+            }
+        }
+    }
+    li:last-child {
+        margin-bottom: 80px;
+    }
+}
+
+.hm-customer-order-coupon-header {
+    background: #fff;
+    padding: .5rem;
+    .top-bar {
+        p {
+            text-align: center;
+        }
+    }
+}

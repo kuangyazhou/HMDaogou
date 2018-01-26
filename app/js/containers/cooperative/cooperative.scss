@@ -1,0 +1,192 @@
+.hm-cooperative-container {
+    overflow: scroll;
+    .tabs {
+        margin: 0;
+    }
+    .tabs-nav .btn {
+        border: none;
+        background-color: #f95563;
+        color: #feb8be;
+        padding: 1.3175rem 1rem;
+    }
+    .tabs-nav .btn.active {
+        background-color: #f95563;
+        color: #fff;
+    }
+    .item-header,
+    .tabbar-label,
+    .tabs-nav .btn,
+    .text-truncate {
+        border-bottom: 0;
+    }
+    .btn-hollow.btn-alert:active,
+    .btn-hollow.btn-alert.active {
+        background: #f95563;
+    }
+    .btn-hollow.btn-alert {
+        color: #f95563;
+    }
+    .btn-hollow.btn-alert.active,
+    .hm-cooperative-container .btn-hollow.btn-alert:active {
+        color: #fff;
+    }
+    .hm-cooperative-tab-header {
+        >i {
+            display: block;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        >.text {
+            font-size: .9rem;
+        }
+    }
+    .hm-compilation-empty {
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: column;
+        -webkit-flex-direction: row;
+        align-items: center;
+        -webkit-align-items: center;
+        justify-content: center;
+        -webkit-justify-content: center;
+        >i {
+            font-size: 96px;
+            color: #289D76;
+        }
+        >p {
+            margin-top: .625rem;
+            font-size: 1.2rem;
+            color: #606060;
+        }
+    }
+}
+
+.hm-evaluate {
+    padding: 0 .3125rem;
+    .evaluate-to-me {
+        display: flex;
+        display: -webkit-flex;
+        background: #fff;
+        border-radius: 5px;
+        margin: .5rem 0;
+        font-size: .8rem;
+        padding: .5rem 0;
+        text-align: center;
+        .icon-wrapper {
+            position: relative;
+            border-right: 1px solid #CBCBCB;
+            padding: 0 .5rem 0 .5rem;
+            flex: 1;
+            -webkit-flex: 1;
+            line-height: 40px;
+            .iconfont {
+                color: #D76268;
+            }
+        }
+        .icon-wrapper:before {
+            position: absolute;
+            top: 10px;
+            right: -8px;
+            content: "";
+            width: 0;
+            height: 0;
+            border: 8px solid transparent;
+            border-bottom-color: #cbcbcb;
+        }
+        .icon-wrapper:after {
+            position: absolute;
+            top: 11px;
+            right: -8px;
+            content: "";
+            width: 0;
+            height: 0;
+            border: 7px solid transparent;
+            border-bottom-color: #fff;
+            z-index: 1;
+        }
+        .line {
+            position: absolute;
+            top: 25px;
+            right: -12px;
+            height: 1px;
+            width: 11px;
+            z-index: 10;
+            background: #fff;
+        }
+    }
+    .other-info {
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-around;
+        -webkit-justify-content: space-around;
+        flex: 4;
+        -webkit-flex: 4;
+        z-index: 11;
+        color: #9d9d9d;
+        .to-evaluate-details {
+            height: 40px;
+            line-height: 40px;
+            a {
+                color: #333;
+                font-size: .8rem;
+                background: #F95563;
+                color: #fff;
+                padding: .3rem .5rem;
+                border-radius: 30px;
+                .icon {
+                    font-size: .8rem;
+                }
+            }
+        }
+    }
+    .score-rank-list {
+        background: #fff;
+        border-radius: 5px;
+        li {
+            border-bottom: 1px solid #E0E0E0;
+            display: flex;
+            display: -webkit-flex;
+            padding: .5rem;
+            .icon-wrapper {
+                flex: 1;
+                -webkit-flex: 1;
+                text-align: center;
+                border-right: 1px solid #CFCFCF;
+                padding-right: .5rem;
+                line-height: 50px;
+                .iconfont {
+                    font-size: 1.5rem;
+                }
+            }
+            .staff-wrapper {
+                flex: 5;
+                -webkit-flex: 5;
+                display: flex;
+                display: -webkit-flex;
+                justify-content: space-between;
+                -webkit-justify-content: space-between;
+                align-items: center;
+                -webkit-align-items: center;
+                padding-left: 1rem;
+                .evaluate-count {
+                    font-size: .8rem;
+                    color: #9D9D9D;
+                }
+                .average-score {
+                    font-size: .8rem;
+                    color: #9D9D9D;
+                }
+                .staff {
+                    .workNum {
+                        font-size: .8rem;
+                        color: #9d9d9d;
+                        margin-left: .5rem;
+                    }
+                }
+            }
+        }
+        li:last-child {
+            border: none;
+        }
+    }
+}

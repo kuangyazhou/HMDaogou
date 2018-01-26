@@ -1,0 +1,160 @@
+.hm-customer-detail-list {
+    overflow: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    .empty-customer-list {
+        text-align: center;
+        font-size: 1rem;
+        color: #9d9d9d;
+        margin: .625rem 0;
+        .icon-jiazai {
+            display: block;
+            font-size: 2rem;
+        }
+        .icon-meiyouxiaoxi {
+            font-size: 2rem;
+        }
+    } // 更多页面
+    .hm-pager {
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        -webkit-align-items: center;
+        justify-content: space-around;
+        -webkit-justify-content: space-around;
+        width: 100%;
+        padding: 0.625rem 0.9375rem;
+        &.fixed {
+            position: fixed;
+            bottom: 42px;
+            left: 0;
+            background-color: #f4f4f4;
+        }
+        &.flowed {
+            position: static;
+            background: transparent;
+        }
+        >button {
+            width: 45%;
+            padding: 1em;
+            font-size: .9rem;
+            margin-right: 0;
+            margin-bottom: 0;
+            font-size: .625rem;
+            border-color: #e6e6e6;
+            color: #555555;
+            .loader {
+                position: absolute;
+                .loader-bounce1,
+                .loader-bounce2,
+                .loader-bounce3,
+                {
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+            &:active,
+            &.active {
+                background: transparent;
+                border-color: #c4c4c4;
+            }
+            .icon-left-nav {
+                margin-right: 5px;
+            }
+            .icon-right-nav {
+                margin-left: 5px;
+            }
+        }
+        .hm-pager-totop {
+            margin-top: 30px;
+            text-align: center;
+            width: 100%;
+            color: #606060;
+            font-size: .625rem;
+        }
+    }
+    .scroll-area {
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+        user-select: none;
+        font-size-adjust: none;
+        transform: translateZ(0);
+        -webkit-overflow-scrolling: touch;
+    }
+    .no-result {
+        position: absolute;
+        top: 12%;
+        bottom: 0;
+        overflow: hidden;
+        text-align: center;
+        width: 100%;
+        z-index: 999;
+    }
+    .list {
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+        border-bottom: 1px solid #e6e6e6;
+    }
+    .item {
+        border-color: #F0F0F0;
+        border-bottom: none;
+        padding: 0.625rem 0.9375rem;
+        height: 84px;
+    }
+    .item-content {
+        a {
+            font-size: .8rem;
+            color: #696969;
+            .visite {
+                padding-right: .5rem;
+                border-right: 1px solid #E6E6E6;
+                margin-right: .5rem;
+            }
+        }
+    }
+    .item-main {
+        .bind {
+            color: #FF6070;
+        }
+        .notBind {
+            color: #a5a1a1;
+        }
+    } // .............................................
+    .icon-button {
+        display: inline-block;
+        color: #00B5B3;
+        &.message,
+        &.wechat {
+            position: relative;
+            top: 3px;
+        }
+        &[disabled] {
+            pointer-events: none;
+            >i {
+                color: #3c3c3c;
+            }
+        }
+        &.notContacted {
+            color: #FD3E54;
+        }
+        >i {
+            font-size: 24px;
+        }
+    }
+    .btn-group-customer {
+        justify-content: flex-end;
+        -webkit-justify-content: flex-end;
+        align-items: flex-end;
+        -webkit-align-items: flex-end;
+        padding-right: 0;
+        width: 100%;
+        .col {
+            flex: 0 0 25%;
+            -webkit-flex: 0 0 25%;
+            width: 25%;
+            max-width: 25%;
+        }
+    }
+}

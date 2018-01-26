@@ -1,0 +1,67 @@
+.hm-todayCompleteTask {
+    padding: .625rem .3125rem;
+    .taskCard {
+        box-shadow: 2px 3px 10px rgba(0, 0, 0, .15);
+        border-radius: 1px;
+        margin-bottom: 1rem;
+        .cardHeader {
+            padding: 0 .625rem;
+            margin-bottom: .3125rem;
+            background: #fff;
+            height: 2rem;
+            line-height: 2rem;
+            text-align: center;
+        }
+        .cardBody {
+            background: #fff;
+            padding: .625rem;
+            .notComplete,
+            .hasComplete {
+                dt,
+                dd {
+                    display: flex;
+                    display: -webkit-flex;
+                    justify-content: space-between;
+                    -webkit-justify-content: space-between;
+                    span {
+                        text-align: center;
+                    }
+                }
+                dt {
+                    font-weight: normal;
+                    span {
+                        font-size: .875rem;
+                    }
+                }
+                dd {
+                    background: #988ED4;
+                    border-radius: 5px;
+                    height: 2.5rem;
+                    line-height: 2.5rem;
+                    span {
+                        color: #fff;
+                    }
+                }
+            }
+            .notComplete {
+                dt,
+                dd {
+                    span {
+                        width: 50%;
+                    }
+                }
+            }
+            .hasComplete {
+                dt,
+                dd {
+                    span {
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+    .taskCard:last-child {
+      margin-bottom: 80px;
+    }
+}

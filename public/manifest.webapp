@@ -1,0 +1,26 @@
+{
+  "version": "3.0.0",
+  "name": "禾苗导购系统",
+  "launch_path": "/index.html",
+  "description": "禾苗导购系统离线环境.",
+  "developer": {
+    "name": "",
+    "url": ""
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "zh_CN",
+  "permissions": {
+  },
+  "locales": {
+    "en": {
+      "name": "He Miao Shopping Guide System.",
+      "description": "Shopping Guide System.",
+    },
+    "zh_CN": {
+      "name": "禾苗导购系统",
+      "description": "禾苗导购系统离线环境"
+    }
+  }
+}

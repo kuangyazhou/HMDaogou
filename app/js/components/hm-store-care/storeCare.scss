@@ -1,0 +1,88 @@
+.hm-store-care-main {
+    .hm-card-container:last-child {
+        margin-bottom: 3.0625rem;
+    }
+    .hm-card-header-label {
+        .fa {
+            background: #665AA6;
+            border-radius: 50%;
+        }
+    }
+    .tips {
+        display: block;
+        text-align: right;
+        color: #a5a5a5;
+        font-size: .75rem;
+    }
+    .customer-count {
+        height: 2.5rem;
+        border-radius: 5px;
+        line-height: 2.5rem;
+        background: #988ED4;
+        padding: 0 5%;
+        color: #fff;
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-around;
+        -webkit-justify-content: space-around;
+    }
+    .customer-percent {
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-around;
+        -webkit-justify-content: space-around;
+        div {
+            background: #988ED4;
+            border-radius: 5px;
+            a {
+                display: flex;
+                display: -webkit-flex;
+                align-items: center;
+                -webkit-align-items: center;
+                color: #fff;
+                padding: .5rem 1rem;
+                height: 4rem;
+                p {
+                    text-align: center;
+                    font-size: .9rem;
+                }
+                i {
+                    font-style: normal;
+                    font-size: .75rem;
+                    margin-left: .5rem;
+                }
+            }
+        }
+    }
+    .contact-statistics {
+        display: flex;
+        display: -webkit-flex;
+        .by-phone,
+        .by-message,
+        .by-wechat {
+            flex: 1;
+            -webkit-flex: 1;
+            font-size: .8rem;
+            text-align: center;
+            div {
+                color: #48B1FF;
+                font-size: 1.2rem;
+                font-weight: normal;
+            }
+            span {
+                color: #8C8C8C;
+            }
+        }
+        .by-phone, .by-message {
+            border-right: 1px solid #F2F2F2;
+        }
+    }
+    .hm-contact-percent-rank {
+        .hm-card-container {
+            margin-bottom: 1rem;
+        }
+        .hm-card-body {
+            padding: 0;
+        }
+    }
+}

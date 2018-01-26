@@ -1,0 +1,56 @@
+.hm-contacted {
+    background: #F4F4F4;
+    .hm-rank-title {
+        background: #fff;
+        margin: .625rem .3125rem;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background: #fff;
+        margin: .625rem .3125rem 0;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        padding: .5rem;
+    }
+    .hm-rank-list {
+        background: #fff;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        margin: 0 .3125rem;
+        .name {
+            text-align: center;
+        }
+        li:nth-child(3) {
+            border-bottom: 1px solid #ececec;
+        }
+    }
+    .hm-staff-contact {
+        margin-bottom: 40px;
+    }
+    .hm-rank-title {
+        .count, 
+        .name {
+            flex: 2;
+            -webkit-flex: 2;
+        }
+    }
+    .hm-rank-list {
+        .count, 
+        .name {
+            flex: 2;
+            -webkit-flex: 2;
+        } 
+    }
+    .hm-search-result {
+        background: #fff;
+        margin: .625rem .3125rem;
+        .hm-progress-rank-title {
+            margin: 0;
+            padding: .5rem 0;
+        }
+        .name, .count {
+            flex: 2;
+            -webkit-flex: 2;
+            text-align: center;
+        }
+    }
+}

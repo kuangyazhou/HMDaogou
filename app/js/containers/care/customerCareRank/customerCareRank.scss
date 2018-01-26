@@ -1,0 +1,22 @@
+.hm-customerCareRank {
+    .hm-ProgressRank-wrapper,
+    .hm-search-result {
+        padding: .625rem .3125rem;
+        border-radius: 5px;
+        .hm-progress-rank-title {
+            background: #fff;
+            margin: 0;
+            padding: .5rem 0;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .hm-new-progress-wrapper {
+            background: #fff;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+    .hm-search-result {
+        padding: .625rem 0 0;
+    }
+}

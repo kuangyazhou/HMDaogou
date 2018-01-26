@@ -1,0 +1,55 @@
+.hm-default-header {
+    font-size: 1rem;
+    .normal {
+        padding: .625rem 1rem;
+        background: #ff5264;
+        text-align: center;
+        color: #fff;
+    }
+    .special {
+        display: flex;
+        display: -webkit-flex;
+        padding: .625rem 1rem;
+        background: #ff5264;
+        color: #fff;
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+        align-items: center;
+        -webkit-align-items: center;
+        .icon {
+            flex-grow: 1;
+            font-size: 1rem;
+            text-align: left;
+            height: 100%;
+        }
+        .title {
+            flex-grow: 1;
+        }
+        .searchButton {
+            width: 2rem;
+            text-align: right;
+        }
+    }
+    .default {
+        padding: .625rem 1rem;
+        background: #ff5264;
+        text-align: center;
+        color: #fff;
+        .icon {
+            padding-top: 4px;
+            font-size: 1rem;
+            float: left;
+            width: 3rem;
+            text-align: left;
+        }
+        .default-title {
+            margin-left: -2rem;
+        }
+    }
+}
+
+.hm-default-header.manager {
+    > div {
+        background: #2C82D2;
+    }
+}

@@ -1,0 +1,52 @@
+.hm-alert-list {
+    margin-top: 0;
+    background: transparent;
+    .item-title,
+    .item-after,
+    .item-subtitle {
+        font-size: .8rem;
+    }
+    .item {
+        background: #fff;
+    }
+    .item-after {
+        color: #656565;
+    }
+}
+
+.hm-alert-grid {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.hm-alert-label,
+.hm-alert-content {
+    font-size: .8rem;
+    color: #656565;
+}
+
+.hm-alert-content {
+    text-align: left;
+    letter-spacing: 0.05rem;
+}
+
+.hm-alert-label.col-2 {
+    font-weight: 500;
+    flex: 0 0 21.33333%;
+    -webkit-flex: 0 0 21.33333%;
+    max-width: 21.33333%;
+}
+
+.alert-content {
+    max-height: 8rem;
+    overflow-y: scroll;
+}
+
+.hm-alert-content.col-4 {
+    flex: 0 0 80.33333%;
+    -webkit-flex: 0 0 80.33333%;
+    max-width: 80.33333%;
+    .hm-alert {
+        overflow-y: scroll;
+    }
+}

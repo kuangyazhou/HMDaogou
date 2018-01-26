@@ -1,0 +1,111 @@
+.hm-grade-details-header {
+    width: 100%;
+    padding: 1rem;
+    background-size: 100% 100%;
+    background-color: #FF5265;
+    background-repeat: no-repeat;
+    .hm-grade-user-profile {
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        .col-2 {
+            padding-right: 0;
+        }
+    }
+    .hm-grade-ratings-starts {
+        .iconfont {
+            font-size: 1rem;
+        }
+        .icon-star {
+            color: #FAD002;
+        }
+        .icon-star_off {
+            color: #FAD002;
+        }
+    }
+    .hm-grade-user-ranks {
+        text-align: right;
+        padding-right: 0;
+        .txt-rank {
+            font-size: 26px;
+            color: #fff;
+        }
+        h3 {
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: .3rem;
+        }
+    }
+    .btn-all-grade {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        font-size: .8rem;
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 5px;
+        color: white;
+        padding: .1rem .3rem;
+    }
+}
+
+.hm-all-grade-list {
+    margin: .5rem;
+    border-radius: 5px;
+    .item-title-row {
+        align-items: flex-start;
+        -webkit-align-items: flex-start;
+    }
+    .item-subtitle,
+    .item-after {
+        font-size: .8rem;
+    }
+    .hm-grade-customer-name {
+        margin-bottom: 5px;
+    }
+    .item:first-child {
+        border-top: none;
+    }
+    .item:last-child {
+        border-bottom: none;
+        margin-bottom: 48px;
+    }
+}
+
+.hm-grade-ratings-details {
+    h4 {
+        color: #FF5167;
+        margin-bottom: 5px;
+    }
+    .hm-grade-ratings-container {
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        -webkit-align-items: center;
+        justify-content: flex-start;
+        -webkit-justify-content: flex-start;
+        font-size: .625rem;
+        h4 {
+            font-size: .625rem;
+            margin-right: 10px;
+            margin-bottom: 0;
+            color: #C0C0C0;
+        }
+        .hm-grade-ratings-starts {
+            .iconfont {
+                font-size: 1rem;
+            }
+            .icon-star {
+                color: #FAD002;
+            }
+            .icon-star_off {
+                color: #FAD002;
+            }
+        }
+        .hm-grade-ratings-number {
+            font-size: 1rem;
+            margin-left: 1rem;
+            color: #A0A0A0;
+        }
+    }
+}

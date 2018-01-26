@@ -1,0 +1,19 @@
+.hm-suggest {
+    .text-wrapper {
+        padding: .5rem;
+    }
+    .suggestText {
+        border: none;
+        border-radius: 5px;
+        resize: none;
+        color: #666;
+    }
+    .hm-send-suggest {
+        display: block;
+        margin: 0 auto;
+        background-color: #ff5264;
+        border-color: #ff5264;
+        border-radius: 5px;
+        width: 95%;
+    }
+}

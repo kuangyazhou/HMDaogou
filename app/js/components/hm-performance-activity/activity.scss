@@ -1,0 +1,79 @@
+.hm-efficiency-wrapper {
+    margin: .5rem;
+    .hm-efficiency-menu {
+        background: #fff;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin-bottom: .5rem;
+        .menu-header {
+            height: 2.5rem;
+            line-height: 2.5rem;
+            color: #AFD932;
+            border-bottom: 1px solid #F3F3F3;
+            padding: 0 2rem 0 .5rem;
+            .iconfont {
+                margin-right: 1rem;
+            }
+        }
+        .menu-item {
+            display: flex;
+            display: -webkit-flex;
+            justify-content: space-between;
+            -webkit-justify-content: space-between;
+            align-items: center;
+            -webkit-align-items: center;
+            height: 2.5rem;
+            border-bottom: 1px solid #F3F3F3;
+            color: #F65662;
+            padding: 0 2rem 0 .5rem;
+            >div {
+                color: #989898;
+                .iconfont {
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+    .hm-efficiency-menu-yesterday {
+        background: #fff;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin-bottom: .5rem;
+        .menu-header {
+            height: 2.5rem;
+            line-height: 2.5rem;
+            color: #06A4E3;
+            border-bottom: 1px solid #F3F3F3;
+            padding: 0 2rem 0 .5rem;
+            .iconfont {
+                margin-right: 1rem;
+            }
+        }
+        .menu-item {
+            display: flex;
+            display: -webkit-flex;
+            justify-content: space-between;
+            -webkit-justify-content: space-between;
+            align-items: center;
+            -webkit-align-items: center;
+            height: 2.5rem;
+            color: #989898;
+            border-bottom: 1px solid #F3F3F3;
+            color: #F65662;
+            padding: 0 2rem 0 .5rem;
+            >div:first-child {
+                color: #989898;
+            }
+            .iconfont {
+                margin-right: 1rem;
+            }
+            .icon {
+                font-style: normal;
+                font-size: 1rem;
+                color: #989898;
+                margin-right: -1rem;
+                transform: translateX(50%);
+            }
+        }
+    }
+}

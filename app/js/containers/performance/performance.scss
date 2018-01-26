@@ -1,0 +1,267 @@
+.hm-performance {
+    overflow: scroll;
+    padding: 0 .3125rem;
+    .hm-performance-header {
+        position: relative;
+        background: #fff;
+        color: #656565;
+        text-align: center;
+        margin-top: .5rem;
+        padding: .3rem 0;
+        border-bottom: 1px solid #EBEBEB;
+        font-size: .8rem;
+        span {
+            font-size: 1rem;
+            margin-right: 1rem;
+        }
+        .bind {
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            padding: .2rem 1rem;
+            border: 1px solid #2d8cf0;
+            border-radius: 30px;
+        }
+    }
+    .hm-performance-nav {
+        background: #fff;
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-around;
+        -webkit-justify-content: space-around;
+        padding: .5rem 0;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        margin-bottom: .5rem;
+        text-align: center;
+        a,
+        .complete-percent {
+            color: #656565;
+            div {
+                margin-bottom: -0.5rem;
+                font-size: .8rem;
+                b {
+                    font-weight: normal;
+                    font-size: 1.1rem;
+                }
+            }
+            span {
+                font-size: .8rem;
+            }
+        }
+        .coupon {
+            div {
+                color: #EF5052
+            }
+        }
+        .complete-rank {
+            div {
+                color: #4A88EA;
+            }
+        }
+    }
+    .icon-wrapper {
+        span {
+            font-size: .8rem;
+        }
+    }
+    .sale-wrapper>div>span {
+        font-size: .8rem;
+    }
+    .history-sale {
+        background: #fff;
+        display: flex;
+        display: -webkit-flex;
+        padding: .5rem;
+        border-radius: 5px;
+        margin-bottom: .5rem;
+        text-align: center;
+        font-size: 1rem;
+        .iconfont {
+            display: block;
+        }
+        .sale-wrapper {
+            display: flex;
+            display: -webkit-flex;
+            justify-content: space-between;
+            -webkit-justify-content: space-between;
+            margin-left: 1rem;
+            width: 65%;
+        }
+        .icon-wrapper {
+            position: relative;
+            border-right: 1px solid #CBCBCB;
+            padding: 0 1rem 0 .5rem;
+            .iconfont {
+                color: #D76268;
+            }
+        }
+        .icon-wrapper:before {
+            position: absolute;
+            top: 10px;
+            right: -8px;
+            content: "";
+            width: 0;
+            height: 0;
+            border: 8px solid transparent;
+            border-bottom-color: #cbcbcb;
+        }
+        .icon-wrapper:after {
+            position: absolute;
+            top: 11px;
+            right: -8px;
+            content: "";
+            width: 0;
+            height: 0;
+            border: 7px solid transparent;
+            border-bottom-color: #fff;
+            z-index: 1;
+        }
+        .line {
+            position: absolute;
+            top: 25px;
+            right: -12px;
+            height: 1px;
+            width: 11px;
+            z-index: 10;
+            background: #fff;
+        }
+    }
+    .other-sale-container {
+        margin-bottom: .5rem;
+        background: #fff;
+        border-radius: 5px;
+        .iconfont {
+            display: block;
+        }
+        .close-deal,
+        .new-customer,
+        .contacted-customer {
+            display: flex;
+            display: -webkit-flex;
+            text-align: center;
+            padding: .5rem;
+            font-size: 1rem;
+            a {
+                color: #656565;
+                font-size: 1rem;
+            }
+        }
+        .sale-wrapper a span {
+            font-size: .8rem;
+        }
+        .new-customer {
+            .icon-wrapper {
+                .iconfont {
+                    color: #5888DC;
+                }
+            }
+            .sale-wrapper {
+                >a {
+                    >div {
+                        color: #5888DC;
+                    }
+                }
+            }
+        }
+        .contacted-customer {
+            .icon-wrapper {
+                .iconfont {
+                    color: #64B298;
+                }
+            }
+            .sale-wrapper {
+                >a {
+                    >div {
+                        color: #64B298;
+                    }
+                }
+            }
+        }
+        .sale-wrapper {
+            display: flex;
+            display: -webkit-flex;
+            justify-content: space-between;
+            -webkit-justify-content: space-between;
+            margin-left: 1rem;
+            width: 65%;
+        }
+        .icon-wrapper {
+            position: relative;
+            border-right: 1px solid #CBCBCB;
+            padding: 0 1rem 0 .5rem;
+        }
+        .icon-wrapper:before {
+            position: absolute;
+            top: 10px;
+            right: -8px;
+            content: "";
+            width: 0;
+            height: 0;
+            border: 8px solid transparent;
+            border-bottom-color: #cbcbcb;
+        }
+        .icon-wrapper:after {
+            position: absolute;
+            top: 11px;
+            right: -8px;
+            content: "";
+            width: 0;
+            height: 0;
+            border: 7px solid transparent;
+            border-bottom-color: #fff;
+            z-index: 1;
+        }
+        .line {
+            position: absolute;
+            top: 25px;
+            right: -12px;
+            height: 1px;
+            width: 11px;
+            z-index: 10;
+            background: #fff;
+        }
+    }
+    .btn {
+        width: 100%;
+        background: #fff;
+        border-radius: 5px;
+        border: none;
+        font-size: 1rem;
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+        align-items: center;
+        -webkit-align-items: center;
+        height: 2.5rem;
+        padding: 0 2rem 0 1rem;
+        font-size: .8rem;
+        .iconfont {
+            margin-right: 1rem;
+            color: #6834C5;
+            font-size: .8rem;
+        }
+        .icon {
+            font-style: normal;
+            font-size: .8rem;
+            color: #989898;
+            margin-right: -1rem;
+            transform: translateX(50%);
+        }
+    }
+    .border {
+        border-bottom: 1px solid #E7E7E7;
+    }
+    .suggest {
+        .iconfont {
+            color: #87BBAB;
+        }
+    }
+    .tranin {
+        .iconfont {
+            color: #83A7E0;
+        }
+    }
+}

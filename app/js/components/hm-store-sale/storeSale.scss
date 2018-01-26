@@ -1,0 +1,65 @@
+.store-sale-main {
+    .hm-card-container:last-child {
+        margin-bottom: 3.0625rem;
+    }
+    .hm-add-and-deal-wrapper,
+    .month-new-customer-wrapper {
+        .hm-card-container {
+            margin-bottom: 1rem;
+        }
+        .hm-card-header {
+            border-radius: 5px;
+        }
+        .hm-card-body {
+            padding: 0;
+        }
+    }
+    .deal-detail {
+        display: flex;
+        display: -webkit-flex;
+        .deal,
+        .single {
+            flex: 1;
+            -webkit-flex: 1;
+            text-align: center;
+            span {
+                color: #3799FF;
+                font-size: 1.2rem;
+            }
+            p {
+                color: #666666;
+            }
+        }
+        .deal {
+            border-right: 1px solid #F2F2F2;
+        }
+    }
+    .growth-trendl {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        display: -webkit-flex;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        -webkit-justify-content: space-around;
+        div {
+            background: #988ed4;
+            height: 4rem;
+            line-height: 4rem;
+            border-radius: 5px;
+            a {
+                padding: 1rem;
+                font-size: .75rem;
+                color: #fff;
+                span {
+                    font-size: 1.06rem;
+                }
+                i {
+                    font-style: normal;
+                    font-size: .75rem;
+                    margin-left: .5rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,1165 @@
+// 覆盖字体路径变量，以防止编译出错
+// 1.0.0-rc.1 有点小问题，需要手动删掉
+//    node_modules/amazeui-touch/scss/amazeui.touch.scss 中的 `$ratchicons-path: 'fonts/';` 这一行
+// @see https://github.com/jtangelder/sass-loader#problems-with-url
+$ratchicons-path: "../../node_modules/amazeui-touch/fonts/";
+@import "~amazeui-touch/scss/amazeui.touch.scss";
+// 导入fontawesome的SCSS文件
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
+dl {
+    list-style: none;
+}
+
+.__modal-portal {
+    .modal {
+        .modal-inner {
+            border-radius: 5px;
+            .modal-dialog {
+                .modal-header {
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                    background: #ff5264;
+                    margin-bottom: 1rem;
+                    h4 {
+                        color: #fff;
+                    }
+                }
+                .modal-footer {
+                    border: none;
+                    display: -webkit-flex;
+                    .modal-btn {
+                        background: #ff5264;
+                        flex: none;
+                        -webkit-flex: none;
+                        color: #fff;
+                        border-radius: 20px;
+                        padding: .5rem 2rem;
+                        margin: .5rem auto;
+                        line-height: normal;
+                    }
+                }
+            }
+        }
+    }
+    .modal.manager {
+        .modal-inner {
+            .modal-dialog {
+                .modal-header {
+                    background: linear-gradient(90deg, #7165B0, #897EC9 50%, #897EC9);
+                }
+                .modal-footer {
+                    border: none;
+                    .modal-btn {
+                        background: linear-gradient(90deg, #7165B0, #897EC9 50%, #897EC9);
+                    }
+                }
+            }
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.loading-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .3);
+    z-index: 10000;
+    .hm-loading {
+        position: absolute;
+        top: 50%;
+        left: calc(50% - 1.5rem);
+        font-size: 3rem;
+        color: #fff;
+    }
+}
+
+.hm-loading-wrapper {
+    text-align: center;
+    width: 100%;
+    background: transparent !important;
+    border: none !important;
+    padding: 1rem 0 !important;
+    justify-content: center;
+    -webkit-justify-content: center;
+}
+
+.hm-loading {
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #989898;
+}
+
+.hm-null {
+    font-size: 1rem;
+    font-weight: normal;
+    border: none !important;
+    background: transparent !important;
+    text-align: center;
+    color: #9d9d9d;
+    justify-content: center;
+    -webkit-justify-content: center;
+    flex-direction: column;
+    .iconfont {
+        display: block;
+        font-size: 2rem !important;
+        color: #9d9d9d;
+    }
+}
+
+.hm-null:before {
+    background: transparent !important;
+}
+
+.hm-loading-wrapper:before {
+    content: '';
+    display: table;
+    width: 0;
+    height: 0;
+}
+
+
+/* Container `fade` 动画示例 */
+
+.view-transition-fade-enter {
+    opacity: 0.01;
+}
+
+.view-transition-fade-enter.view-transition-fade-enter-active {
+    opacity: 1;
+    transition: opacity 450ms ease-in;
+}
+
+.view-transition-fade-leave {
+    opacity: 1;
+}
+
+.view-transition-fade-leave.view-transition-fade-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}
+
+// .view {
+//   overflow: scroll;
+// }
+body {
+    // 解决IOS和ANDROID闪动的问题.
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    -webkit-overflow-scrolling: touch; // 解决ios滚动元素消失
+    font-size: 16px; // 修正滚动条的问题, 并给每个容器页面下边距为15%.
+    .hm-scrollable-container {
+        height: 100%;
+        margin-bottom: 13%;
+    }
+    .hm-dblock {
+        display: block !important;
+    }
+    .modal {
+        width: 90%;
+    }
+    .modal-btn {
+        color: #656565;
+    }
+    canvas {
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+}
+
+// 覆盖默认的背景色
+body .view {
+    background-color: #f4f4f4;
+}
+
+body .btn-warning:hover,
+body .btn-warning:active,
+body .btn-warning.active {
+    background: white;
+    color: #dedede;
+    border-color: #dedede;
+}
+
+// 工具函数
+.hide {
+    display: none !important;
+}
+
+.transparent {
+    opacity: 0!important;
+}
+
+.stop-overflow:before {
+    display: table;
+    content: '';
+}
+
+.show {
+    opacity: 1 !important;
+}
+
+// 图标字体
+.tab-icon {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 18px; // 默认图标字体大小18px
+    margin-bottom: .2rem;
+    ~.tabbar-label {
+        font-size: .9rem;
+    }
+}
+
+// .tabbar
+body .tabbar {
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    border-top: 1px solid #dedede;
+    z-index: 1000;
+}
+
+body .tabbar>.active,
+body .tabbar>.active a {
+    color: #EE3646;
+}
+
+body .manager>.active,
+body .manager>.active a {
+    color: #48B1FF;
+}
+
+body {
+    .tabbar {
+        padding: 0;
+        .tabbar-item {
+            line-height: 1.1;
+        }
+        .tab-icon {
+            position: relative;
+            font-size: 17px;
+            line-height: 1;
+        }
+    }
+}
+
+// ------------------------------------
+// Utils
+// ------------------------------------
+.hm-color-red {
+    color: #FF4347 !important;
+}
+
+.hm-color-white {
+    color: white !important;
+}
+
+@font-face {
+    font-family: "iconfont";
+    src: url('../fonts/iconfont.eot?t=1509437400232');
+    /* IE9*/
+    src: url('../fonts/iconfont.eot?t=1509437400232#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/iconfont.ttf?t=1509437400232') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('../fonts/iconfont.svg?t=1509437400232#iconfont') format('svg');
+    /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 1rem;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shixinjiantoushang:before {
+    content: "\e645";
+}
+
+.icon-shixinjiantouxia:before {
+    content: "\e646";
+}
+
+.icon-v:before {
+    content: "\e65a";
+}
+
+.icon-tuichu:before {
+    content: "\e62d";
+}
+
+.icon-mendian:before {
+    content: "\e635";
+}
+
+.icon-mibao:before {
+    content: "\e6f8";
+}
+
+.icon-iconfont02:before {
+    content: "\e602";
+}
+
+.icon-warn2:before {
+    content: "\e71b";
+}
+
+.icon-paixing:before {
+    content: "\e620";
+}
+
+.icon-tubiao05:before {
+    content: "\e60e";
+}
+
+.icon-baobeibaby137:before {
+    content: "\e610";
+}
+
+.icon-erweima:before {
+    content: "\e611";
+}
+
+.icon-555:before {
+    content: "\e623";
+}
+
+.icon-kaoshi:before {
+    content: "\e6ff";
+}
+
+.icon-fengbiqisangeyue:before {
+    content: "\e6fd";
+}
+
+.icon-9dianchangyeji:before {
+    content: "\e772";
+}
+
+.icon-target:before {
+    content: "\e671";
+}
+
+.icon-leimupinleifenleileibie:before {
+    content: "\e7f9";
+}
+
+.icon-nvbaobao:before {
+    content: "\e608";
+}
+
+.icon-shuju:before {
+    content: "\e69c";
+}
+
+.icon-huodong:before {
+    content: "\e726";
+}
+
+.icon-woderenwu:before {
+    content: "\e618";
+}
+
+.icon-star:before {
+    content: "\e733";
+}
+
+.icon-meiyouxiaoxi:before {
+    content: "\e6b1";
+}
+
+.icon-xiaoshouechaxun:before {
+    content: "\e613";
+}
+
+.icon-yinger:before {
+    content: "\e617";
+}
+
+.icon-36x36shengri:before {
+    content: "\e61d";
+}
+
+.icon-qushi:before {
+    content: "\e630";
+}
+
+.icon-tuijian:before {
+    content: "\e6aa";
+}
+
+.icon-xiaoshoumingxi:before {
+    content: "\e60d";
+}
+
+.icon-icon:before {
+    content: "\e606";
+}
+
+.icon-zhanbilei:before {
+    content: "\e6ce";
+}
+
+.icon-weixin:before {
+    content: "\e612";
+}
+
+.icon-lianxi:before {
+    content: "\e60f";
+}
+
+.icon-dingdanzongshu-:before {
+    content: "\e62f";
+}
+
+.icon-jinri:before {
+    content: "\e627";
+}
+
+.icon-chusheng:before {
+    content: "\e60c";
+}
+
+.icon-business_line:before {
+    content: "\e614";
+}
+
+.icon-round_yue_fill:before {
+    content: "\e675";
+}
+
+.icon-jin_fill:before {
+    content: "\e679";
+}
+
+.icon-ziyuan:before {
+    content: "\e629";
+}
+
+.icon-tupian:before {
+    content: "\e65c";
+}
+
+.icon-xinzengkehu:before {
+    content: "\e655";
+}
+
+.icon-jiazai:before {
+    content: "\e622";
+}
+
+.icon-yingerglyph_:before {
+    content: "\e6c4";
+}
+
+.icon-baojiadan:before {
+    content: "\e702";
+}
+
+.icon-shangxiajiantou:before {
+    content: "\e604";
+}
+
+.icon-zhousui:before {
+    content: "\e625";
+}
+
+.icon-yonghu:before {
+    content: "\e64a";
+}
+
+.icon-uc_jingyingfenxi:before {
+    content: "\e61c";
+}
+
+.icon-zuori:before {
+    content: "\e68e";
+}
+
+.icon-none:before {
+    content: "\e6cc";
+}
+
+.icon-jiangjin:before {
+    content: "\e650";
+}
+
+.icon-wanchengjindu:before {
+    content: "\e63f";
+}
+
+.icon-sousuo:before {
+    content: "\e601";
+}
+
+.icon-kehulianxijilu:before {
+    content: "\e69e";
+}
+
+.icon-disanming:before {
+    content: "\e6bf";
+}
+
+.icon-diyiming:before {
+    content: "\e6c0";
+}
+
+.icon-dierming:before {
+    content: "\e6c1";
+}
+
+.icon-huangguan:before {
+    content: "\e9a3";
+}
+
+.icon-shaixuanxuanzhong:before {
+    content: "\e605";
+}
+
+.icon-huangguan1:before {
+    content: "\e616";
+}
+
+.icon-dianchangdaix:before {
+    content: "\e69f";
+}
+
+.icon-yuezhan:before {
+    content: "\e63c";
+}
+
+.icon-pingjia-:before {
+    content: "\e61a";
+}
+
+.icon-fanhui:before {
+    content: "\e7a1";
+}
+
+.icon-qian:before {
+    content: "\e648";
+}
+
+.icon-goumai:before {
+    content: "\e62b";
+}
+
+.icon-dianhua:before {
+    content: "\e609";
+}
+
+.icon-beizhu:before {
+    content: "\e691";
+}
+
+.icon-xiaoshoue:before {
+    content: "\e63e";
+}
+
+.icon-tongzhi:before {
+    content: "\e60a";
+}
+
+.icon-xiaolian:before {
+    content: "\e67b";
+}
+
+.icon-kehu:before {
+    content: "\e615";
+}
+
+.icon-qiehuan:before {
+    content: "\e724";
+}
+
+.icon-kefu:before {
+    content: "\e62a";
+}
+
+.icon-arrow-right:before {
+    content: "\e619";
+}
+
+.icon-star_off:before {
+    content: "\e603";
+}
+
+.icon-yujing:before {
+    content: "\e62c";
+}
+
+.icon-tongji:before {
+    content: "\e61b";
+}
+
+.icon-chengjiaonan:before {
+    content: "\e709";
+}
+
+.icon-yingxiao:before {
+    content: "\e633";
+}
+
+.icon-wanchengrenwu:before {
+    content: "\e61e";
+}
+
+.icon-weihukehu:before {
+    content: "\e61f";
+}
+
+.icon-lamafan:before {
+    content: "\e626";
+}
+
+.icon-liushishuai:before {
+    content: "\e7d7";
+}
+
+.icon-wangluozhongduan:before {
+    content: "\e60b";
+}
+
+// loading
+.hm-spin {
+    -webkit-animation: hm-spin 2s infinite linear;
+    animation: hm-spin 2s infinite linear;
+}
+
+.hm-pulse {
+    -webkit-animation: hm-spin 1s infinite steps(8);
+    animation: hm-spin 1s infinite steps(8);
+}
+
+@-webkit-keyframes hm-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes hm-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+.hm-pulse {
+    -webkit-animation: hm-spin 1s infinite steps(8);
+    animation: hm-spin 1s infinite steps(8);
+}
+
+// 工具类
+.noPadding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.invisiable {
+    visibility: hidden !important;
+}
+
+.marginBottomNone {
+    margin-bottom: 0 !important;
+}
+
+// 404 NOT FOUND.
+.hm-notfound-img,
+.hm-notfound-text {
+    margin-top: -1rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.hm-notfound-img {
+    img {
+        max-width: 100%;
+        height: auto;
+        display: inline-block;
+        vertical-align: middle;
+        width: 80%;
+        margin: 25% 0;
+    }
+}
+
+.hm-notfound-text {
+    font-size: 1.21725rem;
+}
+
+.hm-rank-title {
+    border-bottom: 1px solid #ECECEC;
+    display: flex;
+    display: -webkit-flex;
+    color: #ABABAB;
+    font-size: .8rem;
+    padding-bottom: .5rem;
+    margin-bottom: .5rem;
+    .rank,
+    .amount,
+    .count {
+        flex: 1;
+        -webkit-flex: 1;
+        text-align: center;
+    }
+    .name {
+        flex: 3;
+        -webkit-flex: 3;
+        text-align: center;
+    }
+}
+
+.hm-rank-list {
+    li {
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+        border-bottom: 1px solid #ECECEC;
+        padding: .5rem 0;
+        .iconfont {
+            font-size: 1.5rem;
+        }
+        .rank,
+        .count {
+            flex: 1;
+            -webkit-flex: 1;
+            align-self: center;
+            -webkit-align-self: center;
+            text-align: center;
+        }
+        .amount {
+            flex: 1;
+            -webkit-flex: 1;
+            color: #48B1FF;
+            text-align: center;
+            align-self: center;
+            -webkit-align-self: center;
+        }
+        .name {
+            flex: 3;
+            -webkit-flex: 3;
+            align-self: center;
+            -webkit-align-self: center;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            font-size: .8rem;
+            padding-right: .5rem;
+            color: #7F7F7F;
+        }
+    }
+    li:nth-child(3) {
+        border: none;
+    }
+    li.hm-loadding-wrapper {
+        .iconfont {
+            margin: 0 auto;
+            color: #dedede;
+            font-size: 1rem;
+        }
+    }
+}
+
+.hm-loadding-wrapper {
+    text-align: center;
+}
+
+.progress {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    height: .8rem;
+    line-height: 0.8rem;
+    overflow: hidden;
+    border-radius: 30px;
+    font-size: .8rem;
+    margin-bottom: .2rem;
+    span {
+        display: inline-block;
+        z-index: 10;
+        height: 100%;
+        line-height: 100%;
+        border-radius: 30px;
+        text-align: right;
+        color: #fff;
+        padding-top: 1px;
+        b {
+            font-weight: normal;
+            margin: 0 .5rem;
+        }
+    }
+}
+
+.progress.manager {
+    background: #D2EEFF;
+    span {
+        background: #48B1FF;
+    }
+}
+
+.hm-progress-rank-title {
+    border-bottom: 1px solid #ECECEC;
+    display: flex;
+    display: -webkit-flex;
+    color: #ABABAB;
+    font-size: .8rem;
+    padding-bottom: .5rem;
+    margin-bottom: .5rem;
+    text-align: center;
+    .rank {
+        flex: 1;
+        -webkit-flex: 1;
+    }
+    .name {
+        flex: 1;
+        -webkit-flex: 1;
+    }
+    .point {
+        flex: 3;
+        -webkit-flex: 3;
+    }
+    .count {
+        flex: 2;
+        -webkit-flex: 2;
+    }
+}
+
+.hm-new-progress-wrapper {
+    .hm-new-progress {
+        display: flex;
+        -webkit-display: flex;
+        font-size: .8rem;
+        align-items: center;
+        -webkit-align-items: center;
+        text-align: center;
+        padding: .5rem 0;
+        border-bottom: 1px solid #f2f2f2;
+        .icon-wrapper {
+            flex: 1;
+            -webkit-flex: 1;
+        }
+        .staff-name {
+            flex: 1;
+            -webkit-flex: 1;
+        }
+        .progress {
+            flex: 3;
+            -webkit-flex: 3;
+        }
+        .staff-amount {
+            flex: 2;
+            -webkit-flex: 2;
+            span {
+                color: #8ACDFF;
+            }
+        }
+        .iconfont {
+            font-size: 1.5rem;
+        }
+    }
+    .hm-new-progress:first-child {
+        .iconfont {
+            color: #FFC616;
+        }
+    }
+    .hm-new-progress:nth-child(2) {
+        .iconfont {
+            color: #D4D8DB;
+        }
+    }
+    .hm-new-progress:nth-child(3) {
+        .iconfont {
+            color: #F2BD80;
+        }
+    }
+    .hm-new-progress:last-child {
+        border: none;
+    }
+}
+
+.hm-progress-rank {
+    font-weight: normal;
+    margin-bottom: 1rem;
+    .bottom-detail {
+        color: #656565;
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+        width: 100%;
+        font-size: .8rem;
+        margin-bottom: .5rem;
+        b {
+            color: #48B1FF;
+            font-weight: normal;
+        }
+        >strong {
+            font-weight: normal;
+        }
+    }
+}
+
+.hm-search-form {
+    padding: .1rem .4rem;
+    background: #2C82D2;
+    .search {
+        position: relative;
+        display: flex;
+        display: -webkit-flex;
+        height: 100%;
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+        align-items: center;
+        -webkit-align-items: center;
+        transition: all linear .2s;
+        input {
+            height: 2.3rem;
+            margin-bottom: 0;
+            padding: .3rem 2.3rem;
+            border-radius: 30px;
+            background: hsla(0, 0%, 100%, .2);
+            color: #fff;
+            border: none;
+        }
+        .icon-search {
+            position: absolute;
+            font-size: 1rem;
+            color: #fff;
+            top: 13px;
+            left: 24px;
+        }
+    }
+    .hide {
+        height: 0;
+    }
+    .show {
+        height: 39.5px;
+    }
+    .cancle {
+        color: #fff;
+        font-size: .8rem;
+    }
+    .col-1 {
+        align-self: center;
+        -webkit-align-self: center;
+    }
+}
+
+.hm-search-result {
+    border-radius: 5px;
+    margin: 0 .3125rem;
+    dd:last-child {
+        margin-bottom: 0;
+    }
+    .sale-changce-list {
+        margin-bottom: 0;
+    }
+}
+
+.hm-sale-statistics-nav {
+    .tabs-nav {
+        height: 2rem;
+        padding: 0 30;
+        justify-content: center;
+        -webkit-justify-content: center;
+        background: #F4F4F4;
+        >button {
+            background: #fff;
+            color: #999999;
+            padding: .5rem 1rem;
+            border: 1px solid #3799FF;
+            flex: none;
+            -webkit-flex: none;
+        }
+        >button.active {
+            color: #fff;
+            background: #3799FF;
+        }
+        >button:first-child {
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+        }
+        >button:last-child {
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+        }
+    }
+    .tabs-body {
+        background: #F4F4F4;
+    }
+    .tab-panel {
+        padding: .625rem .3125rem;
+    }
+}
+
+.hm-supervisor-statistics-nav {
+    width: 100%;
+    .tabs-nav {
+        height: 2rem;
+        padding: 0 30;
+        justify-content: center;
+        -webkit-justify-content: center;
+        background: #F4F4F4;
+        >button {
+            background: #fff;
+            color: #999999;
+            padding: .5rem 1rem;
+            border: 1px solid #f8b551;
+            flex: none;
+            -webkit-flex: none;
+        }
+        >button.active {
+            color: #fff;
+            background: #f8b551;
+        }
+        >button:first-child {
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+        }
+        >button:last-child {
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+        }
+    }
+    .tabs-body {
+        background: #F4F4F4;
+    }
+    .tab-panel {
+        padding: .625rem .3125rem;
+    }
+}
+
+.btn-hollow.btn-alert.active,
+.btn-hollow.btn-alert:active {
+    background: transparent;
+}
+
+.icon-diyiming {
+    color: #ffc616;
+}
+
+.icon-dierming {
+    color: #d4d8db;
+}
+
+.icon-disanming {
+    color: #f2bd80;
+}
+
+.hm-chart-tip {
+    background: #fff;
+    border-radius: 5px;
+    margin: .625rem .3125rem;
+    .tip-title {
+        text-align: center;
+        font-size: .8rem;
+        padding: .5rem 0;
+    }
+    .tip-items {
+        display: flex;
+        display: -webkit-flex;
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        justify-content: start;
+        -webkit-justify-content: start;
+        font-size: .8rem;
+        .items {
+            text-align: center;
+            width: 50%;
+            margin-bottom: .5rem;
+            span {
+                color: #48b1ff;
+                font-size: 1.2rem;
+            }
+            p {
+                font-size: .8rem;
+            }
+        }
+    }
+}
+
+.hm-chart-wrapper {
+    background: #fff;
+    border-radius: 5px;
+    margin: .625rem .3125rem;
+    height: 350px;
+    margin-bottom: 50px;
+}
+
+.sale-changce-wrapper {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    a {
+        color: #666666;
+        font-size: .8rem;
+        text-align: center;
+        width: 33.3%;
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        -webkit-align-items: center;
+        justify-content: center;
+        -webkit-justify-content: center;
+        border-bottom: 1px solid #F2F2F2;
+        padding-bottom: .5rem;
+        >div {
+            b {
+                font-size: 1.2rem;
+                font-weight: normal;
+                color: #48B1FF;
+            }
+            p {
+                font-size: .8rem;
+            }
+        }
+        >.icon {
+            color: #48B1FF;
+            font-size: .8rem;
+            margin-left: .5rem;
+        }
+    }
+    a:nth-child(4),
+    a:last-child {
+        border: none;
+    }
+}
+
+// *:not(html) {
+//     -webkit-transform: translate3d(0, 0, 0);
+// }

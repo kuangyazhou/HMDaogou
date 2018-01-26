@@ -1,0 +1,39 @@
+.hm-today-new-customer {
+    .new-customer-list {
+        background: #fff;
+        border-radius: 5px;
+        margin: .625rem .3125rem 2.93rem;
+        dt {
+            font-weight: normal;
+            padding: .5rem;
+            color: #999;
+            margin: 0;
+            border-bottom: 1px solid #E6E6E6;
+            font-size: .8rem;
+        }
+        dd {
+            color: #666;
+            margin: 0;
+            padding: .5rem 0;
+            font-size: .8rem;
+            border-bottom: 1px solid #f2f2f2;
+        }
+        dt,
+        dd {
+            display: flex;
+            display: -webkit-flex;
+            text-align: center;
+            .name,
+            .count,
+            .num {
+                flex: 1;
+                -webkit-flex: 1;
+            }
+        }
+    }
+    .hm-search-result {
+        .new-customer-list {
+            margin: .625rem 0 0;
+        }
+    }
+}

@@ -1,0 +1,155 @@
+.hm-market-list {
+  margin-top: 1rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  > li:last-child {
+   padding-bottom: 60px;
+  }
+}
+
+.hm-customer-vip-order-main,
+.hm-customer-assign-order-main {
+  margin-top: .5rem;
+  font-size: .8rem;
+
+  .marketing-list {
+    background: #fff;
+
+    > li:not(:last-child) {
+      border-bottom: 1px solid #e1e1e1;
+    }
+
+    > li:not(:nth-child(2)) {
+      display: flex;
+      display: -webkit-flex;
+      flex-flow: row wrap;
+      -webkit-flex-flow: row wrap;
+      justify-content: space-around;
+      -webkit-justify-content: space-around;
+      align-items: center;
+      -webkit-align-items: center;
+      width: 100%;
+      padding: .5rem;
+
+      select {
+          width: 50%;
+          margin-bottom: 0;
+      }
+
+      .label {
+          flex: 1;
+          -webkit-flex: 1;
+      }
+
+      > span {
+        color: #6e6e6e;
+      }
+    }
+
+    >li:nth-child(2) {
+      padding: .5rem;
+      >a {
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+        width: 100%;
+        color: #333;
+        font-size: .8rem;
+        > p {
+          > span {
+            font-size: 0.8rem; 
+            color: #6e6e6e;
+          }
+        }
+      }
+    }
+  }
+
+  .replenish {
+    margin-top: .5rem;
+    background: #fff;
+    padding: .5rem;
+
+    > h5 {
+      font-weight: 400;
+    }
+
+    > span {
+      padding-left: .5rem;
+      font-size: .8rem;
+    }
+  }
+
+  .btn {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+}
+
+.hm-customer-order-coupon-tab {
+  .tab-panel {
+    width: 100%;
+    height: 100%;
+    background: #f4f4f4;
+  }
+
+  .nav-container {
+    .coupon {
+      li {
+        color: #fff;
+        margin-bottom: 0.5rem;
+
+        .warning {
+          background: #ffcc7f;
+        }
+
+        .primary {
+          background: #78aefe;
+        }
+
+        .alert {
+          background: #fe466b;
+        }
+
+        > div {
+          padding: 0.5rem 0.5rem 1rem 0.5rem;
+          display: flex;
+          display: -webkit-flex;
+          justify-content: space-between;
+          -webkit-justify-content: space-between;
+
+          > strong {
+            color: #fff;
+            font-weight: normal;
+            display: block;
+            width: 50%;
+          }
+
+          > p {
+            width: 50%;
+          }
+        }
+
+        > span {
+          display: block;
+          width: 100%;
+          padding: 0.5rem;
+          color: #6e6e6e;
+          font-size: 0.8rem;
+          background: #fff;
+        }
+      }
+    }
+  }
+
+  .Prompt {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-content: center;
+    -webkit-align-content: center;
+  }
+}

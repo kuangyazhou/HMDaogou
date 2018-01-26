@@ -1,0 +1,61 @@
+.hm-customer-record {
+    .group {
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+
+    .group-header {
+        padding: 0.3125rem 0.5rem;
+    }
+
+    .btn-warning {
+        width: 95%;
+        margin: 0 .5rem;
+        background-color: #FF5264;
+        border-color: #FF5264;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        &:hover,
+        &:active,
+        &.active {
+            background-color: #FF5264;
+            color: #C0C0C0;
+        }
+    }
+
+    textarea {
+        border-width: 1px 0;
+    }
+
+    .hide { display: none !important; }
+}
+
+.hm-customer-record-list {
+    .list {
+      li:last-child {
+          margin-bottom: 48px;
+      }
+    }
+    
+    .item-main {
+        flex-direction: column;
+        -webkit-flex-direction: column;
+        width: 80%;
+        .item-after {
+            flex: 1;
+            -webkit-flex: 1;
+            align-self: flex-start;
+            -webkit-align-self: flex-start;
+            text-align: left;
+            margin-left: 0;
+            margin-bottom: .3125rem;
+            font-size: .625rem;
+        }
+
+        .item-desc {
+            text-align: left;
+            align-self: flex-start;
+            -webkit-align-self: flex-start;
+            font-size: .9rem;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+.hm-customer-list {
+    .item:not(:first-child):not(:nth-child(2)) > a:active{
+        background: #fff;
+    }
+    .icon {
+      font-style: normal;
+    }
+}

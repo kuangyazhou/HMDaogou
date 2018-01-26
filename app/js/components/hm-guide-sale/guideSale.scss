@@ -1,0 +1,23 @@
+.hm-guide-sale-main {
+    .hm-card-container:last-child {
+        margin-bottom: 3.0625rem;
+    }
+    .hm-card-header-label {
+        .fa {
+            background: #665AA6;
+            border-radius: 50%;
+        }
+    }
+    .month-target-wrapper {
+        .last-month {
+            padding-top: .8rem;
+            border-top: 1px solid #f2f2f2;
+            .progress.manager {
+                background: #FFE8CC;
+                span {
+                    background: #F9AF4E;
+                }
+            }
+        }
+    }
+}

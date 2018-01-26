@@ -1,0 +1,111 @@
+.hm-performance .tabs-nav .btn {
+    border: none;
+    background-color: #F95563;
+    color: #FEB8BE;
+    padding: 1.3175rem 1rem;
+}
+
+.hm-performance-mianNav {
+    background: rgba(244, 244, 244, 1.00);
+    .tab-panel {
+        padding: 0;
+    }
+}
+
+.hm-performance.btn-hollow.btn-alert:active,
+.hm-performance .btn-hollow.btn-alert.active {
+    background-color: #F95563;
+    color: #fff;
+}
+
+.hm-performance-coupon-container {
+  
+  .header {
+    width: 100%;
+    padding: .625rem 1rem;
+    background: linear-gradient(90deg,#ff4549,#ff6472 50%,#fe979c);
+    text-align: center;
+    color: #fff; 
+  }
+    li {
+        position: relative;
+        background: #fff;
+        margin: .5rem;
+        border-radius: 5px;
+        padding: .5rem .5rem .5rem 1rem;
+        font-size: .8rem;
+        .coupon-main {
+            display: flex;
+            display: -webkit-flex;
+            justify-content: space-between;
+            -webkit-justify-content: space-between;
+            .coupon-price {
+                color: #FFB05A;
+                flex-basis: 30%;
+                -webkit-flex-basis: 30%;
+                p {
+                    span {
+                        font-weight: bold;
+                    }
+                    b {
+                        font-size: 2rem;
+                    }
+                }
+            }
+            .coupon-name {
+                flex-basis: 69%;
+                -webkit-flex-basis: 69%;
+                padding-left: 1%;
+                .send-time,
+                .invalide-time {
+                    display: flex;
+                    display: -webkit-flex;
+                    justify-content: space-between;
+                    -webkit-justify-content: space-between;
+                    color: #C6C6C6;
+                }
+                .state {
+                    font-size: .8rem;
+                    color: #F65765;
+                }
+            }
+        }
+        .coupon-describe {
+            position: relative;
+            color: #9A9A9A;
+            padding-right: 1rem;
+            margin-top: .5rem;
+            .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+                font-size: 1rem;
+            }
+        }
+        .open {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+    li:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        height: 100%;
+        width: .5rem;
+        background: #FFB05A;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+}
+
+
+// @media screen and (max-width: 375px) {
+//     .hm-performance-coupon-container {
+//         li {
+//             font-size: .8rem;
+//         }
+//     }
+// }

@@ -1,0 +1,47 @@
+// 列表
+.hm-sales-list {
+    margin: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: transparent;
+    .item {
+        position: relative;
+        border: none;
+        margin-bottom: 0;
+        border-bottom: 1px solid #e6e6e6;
+        background: #fff;
+    }
+    .item:last-child {
+        margin-bottom: 48px;
+    }
+    .item-title-row {
+        align-items: flex-start;
+        -webkit-align-items: flex-start;
+        .hm-grade-customer-name {
+            color: #67707F;
+            font-size: 1rem;
+        }
+    }
+    .item-subtitle,
+    .item-after {
+        font-size: .8rem;
+    }
+    .item-after {
+        position: absolute;
+        right: 1.2rem;
+    }
+    .hm-grade-customer-name {
+        margin-bottom: 0;
+    }
+    .percent-txt {
+        font-size: 18px;
+        color: #F35F71;
+    }
+    .sale-money-txt {
+        font-size: 14px;
+        color: #F35F71;
+    }
+    .item-title-row~[class*="item-"] {
+        margin-top: 0;
+    }
+}

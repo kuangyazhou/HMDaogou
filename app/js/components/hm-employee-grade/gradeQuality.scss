@@ -1,0 +1,121 @@
+.hm-grade-quality-header {
+    position: absolute;
+    width: 100%;
+    background-color: #ff5264;
+    min-height: 9%;
+    z-index: 1000;
+    form {
+        padding: .6rem;
+    }
+    .search {
+        position: relative;
+        left: -.3rem;
+    }
+    input[type="text"] {
+        margin-bottom: 0;
+        margin-left: 0;
+        border-radius: 6px;
+        border-color: #ff5264;
+        background: #fff;
+        color: #222;
+        padding: .3rem .75rem;
+    }
+    .icon-search {
+        position: absolute;
+        font-size: 20px;
+        color: #000;
+        top: .3em;
+        right: .7rem;
+    }
+    div.col {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.hm-cooperative-container {
+    .tab-panel {
+        min-height: 500px;
+        padding: 0;
+    }
+}
+
+.hm-grade-quality-container {
+    background: #f4f4f4;
+}
+
+.hm-grade-quality-list {
+    margin: .5rem;
+    height: 480px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border-radius: 5px;
+    li {
+        background: #fff;
+        >a {
+            display: flex;
+            display: -webkit-flex;
+            flex: 1;
+            -webkit-flex: 1;
+            align-items: center;
+            -webkit-align-items: center;
+            justify-content: space-around;
+            -webkit-justify-content: space-around;
+            .to-see {
+                color: #FF5167;
+                padding: .1rem .5rem;
+                border: 1px solid #FF5167;
+                border-radius: 5px;
+                font-size: .8rem;
+            }
+        }
+    }
+    .item:first-child {
+        border-top: none;
+    }
+    .item:last-child {
+        border-top: none;
+        margin-bottom: 48px;
+    }
+    .hm-grade-ratings-container {
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        -webkit-align-items: center;
+        justify-content: space-around;
+        -webkit-justify-content: space-around;
+    }
+    .hm-grade-ratings-starts {
+        flex: 90% 0 0;
+        -webkit-flex: 90% 0 0;
+        text-align: center;
+        padding-right: .5rem;
+        .iconfont {
+          font-size: 1rem;
+        }
+        .icon-star {
+            color: #FAD002;
+        }
+        .icon-star_off {
+            color: #FAD002;
+        }
+    }
+    .hm-grade-ratings-number {
+        font-size: 1rem;
+        color: #9F9F9F;
+        flex: 30% 0 0;
+        -webkit-flex: 30% 0 0;
+    }
+    .item-title {
+        display: flex;
+        display: -webkit-flex;
+        >span {
+            margin-right: 1rem;
+            color: #505050;
+        }
+    }
+    .item-title-row~[class*="item-"] {
+        font-size: .9rem;
+        margin-top: 0;
+    }
+}

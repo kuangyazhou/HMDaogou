@@ -1,0 +1,83 @@
+{
+    "extends": "airbnb",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "restParams": true,
+            "spread": true
+        }
+    },
+    "globals": {
+        "sessionStorage": true,
+        "document": true,
+        "navigator": true,
+        "window": true,
+        "fetch": true,
+        "localStorage": true,
+        "clearInterval": true,
+        "setInterval": true,
+        "Blob": true,
+        "BlobBuilder": true,
+        "Worker": true,
+        "URL": true,
+        "XMLHttpRequest": true
+    },
+    "rules": {
+        "linebreak-style": [0],
+        "jsx-a11y/aria-role": [0],
+        "no-plusplus": [0],
+        "no-console": [0],
+        "no-nested-ternary": [0],
+        "react/require-extension": [0],
+        "import/extensions": [0],
+        "jsx-a11y/no-static-element-interactions": [0],
+        "class-methods-use-this": [0],
+        "react/forbid-prop-types": [0],
+        "no-global-assign": [0],
+        "no-unsafe-negation": [0],
+        "no-param-reassign": [0],
+        "no-underscore-dangle": [0],
+        "prefer-arrow-callback": ["error", { "allowNamedFunctions": true }],
+        "no-unused-vars": [0, { "vars": "all", "args": "none" }],
+        "react/prop-types": [1, {
+            "ignore": ["className", "children", "params"]
+        }],
+        "react/sort-comp": [ // https://github.com/yannickcr/-plugin-react/blob/master/docs/rules/sort-comp.md
+            2,
+            {
+                "order": [
+                    "lifecycle",
+                    "/^on.+$/",
+                    "/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/",
+                    "everything-else",
+                    "/^render.+$/",
+                    "render"
+                ],
+                "groups": {
+                    "lifecycle": [
+                        "displayName",
+                        "mixins",
+                        "propTypes",
+                        "contextTypes",
+                        "childContextTypes",
+                        "statics",
+                        "defaultProps",
+                        "constructor",
+                        "getDefaultProps",
+                        "getInitialState",
+                        "state",
+                        "getChildContext",
+                        "componentWillMount",
+                        "componentDidMount",
+                        "componentWillReceiveProps",
+                        "shouldComponentUpdate",
+                        "componentWillUpdate",
+                        "componentDidUpdate",
+                        "componentWillUnmount"
+                    ]
+                }
+            }
+        ],
+        "jsx-a11y/img-has-alt": [1, "Image"]
+    }
+}

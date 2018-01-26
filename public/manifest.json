@@ -1,0 +1,6 @@
+{
+  "name": "He Miao Shopping Guide System",
+  "short_name": "HMSGS",
+  "start_url": "/index.html?homescreen=1",
+  "display": "standalone"
+}

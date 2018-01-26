@@ -1,0 +1,73 @@
+.hm-today-new-customer {
+    .new-customer-list {
+        background: #fff;
+        border-radius: 5px;
+        margin: .625rem .3125rem 2.93rem;
+        dt {
+            font-weight: normal;
+            padding: .5rem;
+            color: #999;
+            margin: 0;
+            border-bottom: 1px solid #E6E6E6;
+            font-size: .8rem;
+            align-items: center;
+            -webkit-align-items: center;
+        }
+        dd {
+            color: #666;
+            margin: 0;
+            padding: .5rem 0;
+            font-size: .8rem;
+            border-bottom: 1px solid #f2f2f2;
+            align-items: center;
+            -webkit-align-items: center;
+        }
+        dt,
+        dd {
+            display: flex;
+            display: -webkit-flex;
+            text-align: center;
+            .rank {
+                .iconfont {
+                    font-size: 1.5rem;
+                }
+            }
+            .rank,
+            .name {
+                flex: 1;
+                -webkit-flex: 1;
+            }
+            .point {
+                flex: 3;
+                -webkit-flex: 3;
+                .progress {
+                    margin-bottom: 0;
+                }
+            }
+            .count {
+                flex: 1.5;
+                -webkit-flex: 1.5;
+            }
+        }
+    }
+    .hm-search-result {
+        .new-customer-list {
+            margin: .625rem 0 0;
+        }
+        .name {
+            flex: 1;
+            -webkit-flex: 1;
+        }
+        .point {
+            flex: 3;
+            -webkit-flex: 3;
+            .progress {
+                margin-bottom: 0;
+            }
+        }
+        .count {
+            flex: 2;
+            -webkit-flex: 2;
+        }
+    }
+}

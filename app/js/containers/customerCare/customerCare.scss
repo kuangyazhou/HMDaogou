@@ -1,0 +1,26 @@
+.hm-customer-care-main {
+    .hm-customer-care-nav {
+        margin-top: 0;
+        .tabs-nav {
+            height: 2.7rem !important;
+        }
+        .tab-panel {
+            padding: .625rem .3125rem !important;
+        }
+        .tabs-nav {
+            height: 2rem;
+            >button {
+                background-color: #665AA6;
+                color: #BEB8E3;
+                padding: .5rem 1rem;
+                border: none;
+            }
+            >button.active {
+                color: #fff;
+            }
+        }
+        .tabs-body {
+            background: #F4F4F4;
+        }
+    }
+}

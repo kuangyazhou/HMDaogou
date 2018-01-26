@@ -1,0 +1,81 @@
+.hm-customer-message {
+    .group {
+        margin-top: .5rem;
+        margin-bottom: 0;
+    }
+    .group-header {
+        padding: 0.3125rem 1rem;
+    }
+    .group-body {
+        position: relative;
+        margin: 0 .5rem;
+        border-radius: 5px;
+    }
+    .btn-warning {
+        display: block;
+        margin: 0 auto;
+        background-color: #FF5264;
+        border-color: #FF5264;
+        border-radius: 5px;
+        width: 95%;
+        &:hover,
+        &:active,
+        &.active {
+            background-color: #FF5264;
+            color: #C0C0C0;
+        }
+    }
+    textarea {
+        border-width: 1px 0;
+        border: none;
+        border-radius: 5px;
+        resize: none;
+    }
+    .hide {
+        display: none !important;
+    }
+    .tips {
+        position: absolute;
+        bottom: 6px;
+        right: 11px;
+        font-size: .8rem;
+        color: #999999;
+    }
+}
+
+.hm-customer-message-list {
+    .item-main {
+        flex-direction: column;
+        -webkit-flex-direction: column;
+        .item-after {
+            flex: 1;
+            -webkit-flex: 1;            
+            align-self: flex-start;
+            -webkit-align-self: flex-start;
+            text-align: left;
+            margin-left: 0;
+            margin-bottom: .3125rem;
+            font-size: .625rem;
+        }
+        .item-desc {
+            text-align: left;
+            align-self: flex-start;
+            -webkit-align-self: flex-start;
+            font-size: .9rem;
+        }
+    }
+}
+
+.is-overflow {
+    color: #FF464A;
+}
+
+.hm-customer-message {
+    .hm-tips {
+        margin: 1rem 0;
+        padding: 1rem;
+        color: #999999;
+        text-align: justify;
+        font-size: .85rem;
+    }
+}

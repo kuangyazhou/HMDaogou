@@ -1,0 +1,107 @@
+.hm-consume {
+    background: #fff !important;
+    overflow: scroll;
+    .consume-tab {
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+        height: 2.5rem;
+        button {
+            width: 25%;
+            text-align: center;
+            color: #B5B5B5;
+            height: 2.5rem;
+            line-height: 2.5rem;
+            font-size: .8rem;
+            border: none;
+            border-bottom: 1px solid #DBDBDB;
+        }
+        .active {
+            border-bottom: 2px solid #F85663;
+        }
+    }
+    .consume-list-wrapper {
+        .consume-list {
+            padding: .675rem;
+            margin-bottom: 80px;
+            li {
+                border-bottom: 1px solid #dbdbdb;
+                a {
+                    display: flex;
+                    display: -webkit-flex;
+                    justify-content: space-between;
+                    -webkit-justify-content: space-between;
+                    padding: .5rem 0;
+                    align-items: center;
+                    color: #B5B5B5;
+                    .left {
+                        display: -webkit-flex;
+                        display: flex;
+                        flex-flow: row nowrap;
+                        -webkit-flex-flow: row nowrap;
+                        align-items: center;
+                        -webkit-align-items: center;
+                        width: 70%;
+                        >div:first-child {
+                            width: 20%;
+                            text-align: center;
+                        }
+                        .top-one {
+                            font-size: 2rem;
+                            .iconfont {
+                                font-size: 1.5rem;
+                                color: #FFC616;
+                            }
+                        }
+                        .top-two {
+                            font-size: 2rem;
+                            .iconfont {
+                                font-size: 1.5rem;
+                                color: #D4D8DB;
+                            }
+                        }
+                        .top-three {
+                            font-size: 2rem;
+                            .iconfont {
+                                font-size: 1.5rem;
+                                color: #F2BD80;
+                            }
+                        }
+                        div:nth-child(2) {
+                            height: 3rem;
+                            margin: 0 1rem;
+                            line-height: 3rem;
+                            img {
+                                height: 100%;
+                            }
+                        }
+                        div:last-child {
+                            font-size: .8rem;
+                        }
+                        .name {
+                            font-size: 1rem !important;
+                        }
+                    }
+                    .right {
+                        color: #FA5360;
+                        .icon {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+            li:first-child,
+            li:nth-child(2),
+            li:nth-child(3) {
+                a {
+                    .left {
+                        >.name {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

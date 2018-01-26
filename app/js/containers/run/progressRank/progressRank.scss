@@ -1,0 +1,42 @@
+.hm-ProgressRank {
+    background: #f4f4f4;
+    .main {
+        background: #F4F4F4;
+    }
+    .hm-ProgressRank-wrapper,
+    .hm-search-result {
+        padding: .625rem .3125rem;
+        border-radius: 5px;
+        .hm-progress-rank-title {
+            background: #fff;
+            margin: 0;
+            padding: .5rem 0;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .hm-new-progress-wrapper {
+            background: #fff;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+    .hm-new-progress:last-child {
+        margin-bottom: 40px;
+    }
+    .hm-search-result {
+        padding: 0;
+        background: #f4f4f4;
+        .hm-new-progress:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .month-main-brand-progress {
+        background: #fff;
+        border-radius: 5px;
+        margin: .625rem .3125rem;
+        padding: 1rem .5rem;
+        .hm-progress-rank:last-child {
+            margin-bottom: 40px;
+        }
+    }
+}

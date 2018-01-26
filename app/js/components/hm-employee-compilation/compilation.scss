@@ -1,0 +1,85 @@
+.hm-compilation-list-container {
+    > div {
+      margin: .5rem;
+    }
+    .hm-card-container {
+        margin: .5rem 0 5rem 0;
+        .hm-card-header {
+            .hm-card-title {
+                color: #6A6A6A;
+                font-size: .9rem;
+            }
+        }
+        .hm-compilation-list {
+            li {
+                border-bottom: 1px solid #DDDDDD;
+                padding-top: .5rem;
+                a {
+                    display: flex;
+                    display: -webkit-flex;
+                    flex-flow: row nowrap;
+                    -webkit-flex-flow: row nowrap;
+                    width: 100%;
+                    .evaluate-wrapper {
+                        width: 100%;
+                        .evalaute-describe {
+                            display: flex;
+                            display: -webkit-flex;
+                            flex-flow: row nowrap;
+                            -webkit-flex-flow: row nowrap;
+                            width: 100%;
+                            .type {
+                                width: 100%;
+                                .top {
+                                    font-size: .8rem;
+                                    color: #7d7d7d;
+                                    display: flex;
+                                    display: -webkit-flex;
+                                    justify-content: space-between;
+                                    -webkit-justify-content: space-between;
+                                    b {
+                                        color: #434343;
+                                        font-weight: normal;
+                                    }
+                                }
+                                .bottom {
+                                    font-size: .6rem;
+                                    display: flex;
+                                    display: -webkit-flex;
+                                    justify-content: space-between;
+                                    -webkit-justify-content: space-between;
+                                    flex-flow: row wrap;
+                                    -webkit-flex-flow: row wrap;
+                                    margin: .3rem 0;
+                                    span {
+                                        color: #7d7d7d;
+                                        display: flex;
+                                        display: -webkit-flex;
+                                        flex-flow: row nowrap;
+                                        -webkit-flex-flow: row nowrap;
+                                    }
+                                    .icon-star {
+                                        font-size: .6rem;
+                                        color: #ffd234;
+                                    }
+                                    .icon-star_off {
+                                        font-size: .6rem;
+                                        color: #8794ab;
+                                    }
+                                }
+                            }
+                        }
+                        .evalaute-main {
+                            font-size: .9rem;
+                            color: #7d7d7d;
+                            padding-bottom: .5rem;
+                        }
+                    }
+                }
+            }
+            li:last-child {
+              border: none;
+            }
+        }
+    }
+}

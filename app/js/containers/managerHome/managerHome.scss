@@ -1,0 +1,64 @@
+.hm-manager-home-header {
+    background: #2C82D2;
+    height: 45px;
+    padding: .625rem 1rem;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    align-items: center;
+    -webkit-align-items: center;
+    box-sizing: border-box;
+    font-size: .8rem;
+    text-align: center;
+    color: #fff;
+    .iconfont {
+        display: block;
+        font-size: .8rem;
+    }
+    a {
+        color: #fff;
+        font-size: .8rem;
+    }
+}
+
+.hm-manager-home-main {
+    .tabs {
+        margin-top: .625rem;
+    }
+    .hm-manager-home-nav {
+        .tabs-nav {
+            height: 2rem;
+            padding: 0 30;
+            justify-content: center;
+            -webkit-justify-content: center;
+            background: #F4F4F4;
+            >button {
+                background: #fff;
+                color: #999999;
+                padding: .5rem 1rem;
+                border: 1px solid #3799FF;
+                flex: none;
+                -webkit-flex: none;
+            }
+            >button.active {
+                color: #fff;
+                background: #3799FF;
+            }
+            >button:first-child {
+                border-top-left-radius: 30px;
+                border-bottom-left-radius: 30px;
+            }
+            >button:last-child {
+                border-top-right-radius: 30px;
+                border-bottom-right-radius: 30px;
+            }
+        }
+        .tabs-body {
+            background: #F4F4F4;
+        }
+        .tab-panel {
+            padding: .625rem .3125rem;
+        }
+    }
+}
