@@ -326,6 +326,11 @@ export default function (reducers) {
       callback(null, require('../containers/supervisor/salechance.jsx').default);
     });
   };
+  const monthCoupon = (location, callback) => {
+    require.ensure([], (require) => {
+      callback(null, require('../containers/care/monthCoupon/MonthCounpon.jsx').default);
+    });
+  };
 
   let position = null;
   if (!isEmpty(loadIdToken())) {
@@ -365,6 +370,7 @@ export default function (reducers) {
           <Route path="/todayLogin" getComponent={todayLogin} />
           <Route path="/physiologicalShaft" getComponent={physiologicalShaft} />
           <Route path="/contacted" getComponent={contacted} />
+          <Route path="/monthCoupon" getComponent={monthCoupon} />
           <Route path="/monetary" getComponent={monetary} />
           <Route path="/monthTaskComplete/:type" getComponent={monthTaskComplete} />
           <Route path="/newCustomer" getComponent={newCustomer} />

@@ -145,6 +145,9 @@ import {
   CUSTOMER_SEND_MESSAGE_SUCCESS,
   CUSTOMER_SEND_MESSAGE_FAILURE,
   CUSTOMER_SEND_MESSAGE_RESET,
+  MESSAGE_TEMPLATE_REQUSET,
+  MESSAGE_TEMPLATE_SUCCESS,
+  MESSAGE_TEMPLATE_FAILURE,
 } from '../actions/customers/message.js';
 
 // 用于扩展assign方法, 支持深拷贝.
@@ -500,6 +503,20 @@ export function customerMessage(state = {}, action) {
       return Object.assign({}, state, {
         code: action.code,
         isMessageSended: action.isMessageSended,
+      });
+    case MESSAGE_TEMPLATE_REQUSET:
+      return Object.assign({}, state, {
+        isMessageTemplateGet: action.isMessageTemplateGet,
+      });
+    case MESSAGE_TEMPLATE_SUCCESS:
+      return Object.assign({}, state, {
+        templateList: action.templateList,
+        isMessageTemplateGet: action.isMessageTemplateGet,
+      });
+    case MESSAGE_TEMPLATE_FAILURE:
+      return Object.assign({}, state, {
+        error: action.error,
+        isMessageTemplateGet: action.isMessageTemplateGet,
       });
     default:
       return state;

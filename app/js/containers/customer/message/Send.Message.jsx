@@ -18,6 +18,7 @@ import {
 import {
   postCustomerMessage,
   sendMessageReset,
+  getMessageTemplate,
 } from '../../../actions/customers/message.js';
 import DefaultHeader from '../../../components/hm-default-header/DefaultHeader.jsx';
 
@@ -45,12 +46,14 @@ class SendMessage extends Component {
     this.closeNotification = this.closeNotification.bind(this);
     this.closePhoneErrorNotification = this.closePhoneErrorNotification.bind(this);
     this.handleStatistics = this.handleStatistics.bind(this);
+    this.handleAddTemplate = this.handleAddTemplate.bind(this);
   }
 
   componentDidMount() {
     const { dispatch, params } = this.props;
     sessionStorage.removeItem('newCode');
     dispatch(sendMessageReset());
+    dispatch(getMessageTemplate());
     const recommendation = params.content;
     if (recommendation) {
       this.smsContent.value = recommendation;
@@ -147,6 +150,18 @@ class SendMessage extends Component {
     }
   }
 
+  handleAddTemplate(e) {
+    this.smsContent.value = '';
+    const { templateList, isMessageTemplateGet, params } = this.props;
+    const recommendation = params.content;
+    const idx = e.target.getAttribute('data-index');
+    if (recommendation) {
+      this.smsContent.value = recommendation + templateList[idx].content;
+    } else {
+      this.smsContent.value = templateList[idx].content;
+    }
+  }
+
   render() {
     const {
       error,
@@ -154,8 +169,10 @@ class SendMessage extends Component {
       Messages,
       isMessageSended,
       code,
+      templateList,
     } = this.props;
     const isOverflow = this.state.smsLength >= 70 ? 'is-overflow' : '';
+    console.log(templateList);
     return (
       <View>
         <Notification
@@ -201,12 +218,28 @@ class SendMessage extends Component {
             <div className="tips">
               <span className={isOverflow}>{this.state.smsLength}</span>/70
             </div>
-            {/* <Field
-              placeholder="请输入需要发送的信息."
-              type="textarea"
-              rows="5"
-              ref={(c) => { this.smsContent = c; }}
-            />*/}
+          </Group>
+          <Group
+            header="短信模板"
+            noPadded
+          >
+            <div className="template">
+              {templateList && templateList.length > 0 ? templateList.map((item, idx) => {
+                const key = `active-${idx}`;
+                return (
+                  <button
+                    key={key}
+                    onClick={this.handleAddTemplate}
+                    data-index={idx}
+                    className="btn"
+                  >
+                    {item.name}
+                  </button>
+                );
+              }) :
+              <div><i className="iconfont icon-meiyouxiaoxi" />还没有设置模板</div>
+              }
+            </div>
           </Group>
           <Button
             id="hm_send_message_commit"
@@ -251,7 +284,9 @@ SendMessage.propTypes = {
   pager: PropTypes.object.isRequired,
   Messages: PropTypes.array.isRequired,
   isMessageSended: PropTypes.bool.isRequired,
+  templateList: PropTypes.array.isRequired,
   history: PropTypes.object.isRequired,
+  isMessageTemplateGet: PropTypes.bool.isRequired,
 };
 
 function mapStateToProps(state) {
@@ -272,6 +307,8 @@ function mapStateToProps(state) {
     pager: customerMessage.pager || {},
     Messages: customerMessage.Messages,
     isMessageSended: customerMessage.isMessageSended,
+    templateList: customerMessage.templateList,
+    isMessageTemplateGet: customerMessage.isMessageTemplateGet,
   };
 }
 

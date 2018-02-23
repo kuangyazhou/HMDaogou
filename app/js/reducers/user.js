@@ -63,6 +63,7 @@ import {
 } from '../actions/users/currentActivity';
 
 // 绩效考核
+
 import {
   MY_PERFORMACE_REQUEST,
   MY_PERFORMACE_SUCCESS,
@@ -82,6 +83,9 @@ import {
   GET_ALL_COUPONS_REQUEST,
   GET_ALL_COUPONS_SUCCESS,
   GET_ALL_COUPONS_FAILURE,
+  GET_PERFORMLIST_SUCCESS,
+  GET_PERFORMLIST_FAIL,
+  GET_PERFORMLIST_REQUEST,
 } from '../actions/users/performance';
 
 // 用户任务管理
@@ -308,6 +312,7 @@ const initialState = {
       notice: '',
     },
   },
+  perforUserList: [],
 };
 
 // 初始化用户登陆验证上下文的状态.
@@ -328,7 +333,7 @@ export default function User(state = initializeState(), action = {}) {
       return Object.assign({}, state, {
         error: action.error,
       });
-    // ---------------------------------------
+      // ---------------------------------------
     case MY_MY_RENCENTLY_ADDED_PEOPLES_REQUEST:
       return Object.assign({}, state, {
         isCatching: action.isCatching,
@@ -347,7 +352,19 @@ export default function User(state = initializeState(), action = {}) {
         ...state,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
+    case GET_PERFORMLIST_SUCCESS:
+      return deepAssign({}, state, {
+        perforUserList: action.data,
+      });
+    case GET_PERFORMLIST_FAIL:
+      return {
+        ...state,
+        error: action.error,
+      };
+    case GET_PERFORMLIST_REQUEST:
+      return Object.assign({}, state);
+      // ---------------------------------------
     case MY_RENCENTLY_DEAL_PEOPLES_REQUEST:
       return Object.assign({}, state, {
         isFetching: action.isFetching,
@@ -368,7 +385,7 @@ export default function User(state = initializeState(), action = {}) {
         ...state,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case CUSTOMER_GROWTH_TYPE_REQUEST:
       return Object.assign({}, state);
     case CUSTOMER_GROWTH_TYPE_SUCCESS:
@@ -380,7 +397,7 @@ export default function User(state = initializeState(), action = {}) {
         ...state,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case CURRENT_DAY_TARGET_REQUEST:
       return Object.assign({}, state);
     case CURRENT_DAY_TARGET_SUCCESS:
@@ -392,29 +409,33 @@ export default function User(state = initializeState(), action = {}) {
         ...state,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
 
-    // ---------------------------------------
+      // ---------------------------------------
     case CURRENT_DAY_TASK_REQUEST:
       return Object.assign({}, state);
     case CURRENT_DAY_TASK_SUCCESS:
-      return Object.assign({}, state, { currentDayTaskSize: action.taskSize });
+      return Object.assign({}, state, {
+        currentDayTaskSize: action.taskSize,
+      });
     case CURRENT_DAY_TASK_FAILURE:
       return {
         ...state,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case UNDO_DAY_TASK_REQUEST:
       return Object.assign({}, state);
     case UNDO_DAY_TASK_SUCCESS:
-      return Object.assign({}, state, { undoTaskSize: action.undoTaskSize });
+      return Object.assign({}, state, {
+        undoTaskSize: action.undoTaskSize,
+      });
     case UNDO_DAY_TASK_FAILURE:
       return {
         ...state,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case STORE_NOTE_REQUEST:
       return Object.assign({}, state);
     case STORE_NOTE_SUCCESS:
@@ -427,7 +448,7 @@ export default function User(state = initializeState(), action = {}) {
         ...state,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case STORE_ALL_NOTE_REQUEST:
       return Object.assign({}, state, {
         isStoreAllNoteGet: action.isStoreAllNoteGet,
@@ -444,7 +465,7 @@ export default function User(state = initializeState(), action = {}) {
         error: action.error,
         isStoreAllNoteGet: action.isStoreAllNoteGet,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case MONTH_SALE_REQUEST:
       return Object.assign({}, state);
     case MONTH_SALE_SUCCESS:
@@ -457,7 +478,7 @@ export default function User(state = initializeState(), action = {}) {
         ...state,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case MEMBER_SALE_REQUEST:
       return Object.assign({}, state);
     case MEMBER_SALE_SUCCESS:
@@ -470,7 +491,7 @@ export default function User(state = initializeState(), action = {}) {
         ...state,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case GET_ALL_COUPONS_REQUEST:
       return Object.assign({}, state, {
         isAllCouponGet: action.isAllCouponGet,
@@ -486,7 +507,7 @@ export default function User(state = initializeState(), action = {}) {
         error: action.error,
         isAllCouponGet: action.isAllCouponGet,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case MY_MEMBER_REQUEST:
       return Object.assign({}, state);
     case MY_MEMBER_SUCCESS:
@@ -498,7 +519,7 @@ export default function User(state = initializeState(), action = {}) {
         ...state,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case MY_TODAY_ACTIVITY_REQUEST:
       return Object.assign({}, state);
     case MY_TODAY_ACTIVITY_SUCCESS:
@@ -512,7 +533,7 @@ export default function User(state = initializeState(), action = {}) {
         ...state,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case MY_YESTODAY_ACTIVITY_REQUEST:
       return Object.assign({}, state);
     case MY_YESTODAY_ACTIVITY_SUCCESS:
@@ -526,7 +547,7 @@ export default function User(state = initializeState(), action = {}) {
         ...state,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case MY_PERFORMACE_REQUEST:
       return Object.assign({}, state);
     case MY_PERFORMACE_SUCCESS:
@@ -538,7 +559,7 @@ export default function User(state = initializeState(), action = {}) {
         ...state,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case MY_PERFORMANCE_CHART_REQUEST:
       return Object.assign({}, state, {
         isRoyaltiesGet: action.isRoyaltiesGet,
@@ -557,7 +578,7 @@ export default function User(state = initializeState(), action = {}) {
         isRoyaltiesGet: action.isRoyaltiesGet,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case MONTH_MEMBER_REWARD_REQUEST:
       return Object.assign({}, state);
     case MONTH_MEMBER_REWARD_SUCCESS:
@@ -572,7 +593,7 @@ export default function User(state = initializeState(), action = {}) {
         ...state,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case CURRENT_DAY_TASK_PAGER_REQUEST:
       return Object.assign({}, state);
     case CURRENT_DAY_TASK_PAGER_SUCCESS:
@@ -589,7 +610,7 @@ export default function User(state = initializeState(), action = {}) {
         ...state,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case UNDO_TASK_PAGER_REQUEST:
       return Object.assign({}, state);
     case UNDO_TASK_PAGER_SUCCESS:
@@ -606,7 +627,7 @@ export default function User(state = initializeState(), action = {}) {
         ...state,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case SINGLE_TASK_PAGER_REQUEST:
       return Object.assign({}, state);
     case SINGLE_TASK_PAGER_SUCCESS:
@@ -623,7 +644,7 @@ export default function User(state = initializeState(), action = {}) {
         ...state,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case GRADE_PAGER_REQUEST:
       return Object.assign({}, state);
     case GRADE_PAGER_SUCCESS:
@@ -638,7 +659,7 @@ export default function User(state = initializeState(), action = {}) {
         ...state,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case GRADE_DETAILS_REQUEST:
       return Object.assign({}, state);
     case GRADE_DETAILS_SUCCESS:
@@ -657,7 +678,7 @@ export default function User(state = initializeState(), action = {}) {
         ...state,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case MY_QCODE_REQUEST:
       return Object.assign({}, state);
     case MY_QCODE_SUCCESS:
@@ -669,7 +690,7 @@ export default function User(state = initializeState(), action = {}) {
         ...state,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case TASK_GROUP_REQUEST:
       return Object.assign({}, state);
     case TASK_GROUP_SUCCESS:
@@ -684,7 +705,7 @@ export default function User(state = initializeState(), action = {}) {
         ...state,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case YEAR_ALL_ACTIVITY_REQUEST:
       return Object.assign({}, state);
     case YEAR_ALL_ACTIVITY_SUCCESS:
@@ -699,7 +720,7 @@ export default function User(state = initializeState(), action = {}) {
         ...state,
         error: action.error,
       };
-    // ---------------------------------------
+      // ---------------------------------------
     case INDEX_ACTIVITY_REQUEST:
       return Object.assign({}, state, {
         isIndexActivityGet: action.isIndexActivityGet,
@@ -730,7 +751,7 @@ export default function User(state = initializeState(), action = {}) {
         ...state,
         error: action.error,
       };
-    // .......................................
+      // .......................................
     default:
       return state;
   }

@@ -2,6 +2,9 @@
     // width: 5rem;
     // height: 5rem;
     // background: cyan;
+    // max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
     background: darken(#fff, 10);
     .header {
         color: #fff;

@@ -131,6 +131,14 @@ class StoreCare extends React.Component {
             </div>
           </div>
         </HMCard>
+        <div className="hm-store-coupon-detail">
+          <HMCard
+            title="月门店优惠券发放与使用明细"
+            iconName="icon-qushi"
+            handleMore="#/monthCoupon"
+            isManager
+          />
+        </div>
         <HMCard
           cardLinkId="hm_store_care_task_complete_link"
           title="月门店销售机会跟进统计"

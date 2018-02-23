@@ -101,7 +101,7 @@ class StaffSaleChangce extends React.Component {
           contextJSX = saleChangceDetail.map((item, idx) => {
             const key = `idx-${idx}`;
             /* eslint no-mixed-operators: [0] */
-            const percent = item.doneValue / item.contentValue * 100;
+            const percent = Math.round(item.doneValue / item.contentValue * 100);
             return (
               <div className="hm-sale-changce-title-item" key={key}>
                 <span className="name">{item.guiderName}</span>
@@ -167,7 +167,7 @@ class StaffSaleChangce extends React.Component {
                 {
                   this.state.result.map((item, idx) => {
                     const key = `idx-${idx}`;
-                    const percent = item.doneValue / item.contentValue * 100;
+                    const percent = Math.round(item.doneValue / item.contentValue * 100);
                     return (
                       <div className="hm-sale-changce-title-item" key={key}>
                         <span className="name">{item.guiderName}</span>
@@ -203,7 +203,7 @@ class StaffSaleChangce extends React.Component {
                         {
                           isSaleChangceDetailGet && saleChangceDetail.map((item, idx) => {
                             const childkey = `key-${idx}`;
-                            const percent = item.doneValue / item.contentValue * 100;
+                            const percent = Math.round(item.doneValue / item.contentValue * 100);
                             if (item.type === '0501') {
                               return (
                                 <div className="hm-sale-changce-title-item" key={childkey}>
@@ -234,7 +234,7 @@ class StaffSaleChangce extends React.Component {
                         {
                           isSaleChangceDetailGet && saleChangceDetail.map((item, idx) => {
                             const childkey = `key-${idx}`;
-                            const percent = item.doneValue / item.contentValue * 100;
+                            const percent = Math.round(item.doneValue / item.contentValue * 100);
                             if (item.type === '0502') {
                               return (
                                 <div className="hm-sale-changce-title-item" key={childkey}>
@@ -265,7 +265,7 @@ class StaffSaleChangce extends React.Component {
                         {
                           isSaleChangceDetailGet && saleChangceDetail.map((item, idx) => {
                             const childkey = `key-${idx}`;
-                            const percent = item.doneValue / item.contentValue * 100;
+                            const percent = Math.round(item.doneValue / item.contentValue * 100);
                             if (item.type === '0503') {
                               return (
                                 <div className="hm-sale-changce-title-item" key={childkey}>
@@ -296,7 +296,7 @@ class StaffSaleChangce extends React.Component {
                         {
                           isSaleChangceDetailGet && saleChangceDetail.map((item, idx) => {
                             const childkey = `key-${idx}`;
-                            const percent = item.doneValue / item.contentValue * 100;
+                            const percent = Math.round(item.doneValue / item.contentValue * 100);
                             if (item.type === '0504') {
                               return (
                                 <div className="hm-sale-changce-title-item" key={childkey}>
@@ -327,7 +327,7 @@ class StaffSaleChangce extends React.Component {
                         {
                           isSaleChangceDetailGet && saleChangceDetail.map((item, idx) => {
                             const childkey = `key-${idx}`;
-                            const percent = item.doneValue / item.contentValue * 100;
+                            const percent = Math.round(item.doneValue / item.contentValue * 100);
                             if (item.type === '0505') {
                               return (
                                 <div className="hm-sale-changce-title-item" key={childkey}>
@@ -358,7 +358,7 @@ class StaffSaleChangce extends React.Component {
                         {
                           isSaleChangceDetailGet && saleChangceDetail.map((item, idx) => {
                             const childkey = `key-${idx}`;
-                            const percent = item.doneValue / item.contentValue * 100;
+                            const percent = Math.round(item.doneValue / item.contentValue * 100);
                             if (item.type === '0506') {
                               return (
                                 <div className="hm-sale-changce-title-item" key={childkey}>

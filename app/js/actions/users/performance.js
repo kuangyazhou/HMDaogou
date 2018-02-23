@@ -36,6 +36,35 @@ export const GET_ALL_COUPONS_REQUEST = 'GET_ALL_COUPONS_REQUEST';
 export const GET_ALL_COUPONS_SUCCESS = 'GET_ALL_COUPONS_SUCCESS';
 export const GET_ALL_COUPONS_FAILURE = 'GET_ALL_COUPONS_FAILURE';
 
+// 优惠券用户列表
+export const GET_PERFORMLIST_SUCCESS = 'GET_PERFORMLIST_SUCCESS';
+export const GET_PERFORMLIST_FAIL = 'GET_PERFORMLIST_FAIL';
+export const GET_PERFORMLIST_REQUEST = 'GET_PERFORMLIST_REQUEST';
+
+
+function getPerformListRequest() {
+  return {
+    type: GET_PERFORMLIST_REQUEST,
+    status: false,
+  };
+}
+
+function getPerformListSuccess(payload) {
+  return {
+    type: GET_PERFORMLIST_SUCCESS,
+    status: true,
+    payload,
+  };
+}
+
+function getPerformListFail() {
+  return {
+    type: GET_PERFORMLIST_FAIL,
+    status: false,
+  };
+}
+
+
 function myPerformanceChartRequest(user) {
   return {
     type: MY_PERFORMANCE_CHART_REQUEST,
@@ -276,6 +305,33 @@ export function fetchALLCoupons() {
     getAllCouponsRequest,
     getAllCouponsSuccess,
     getAllCouponsFailure
+  );
+}
+
+// 获取消费券用户信息
+export function performUserList(arg) {
+  const profile = loadIdToken();
+  const userId = profile.userId;
+  const token = `${userId},${profile.workNum},${profile.position},${profile.storeCode},${profile.storeOutletId}`;
+  const config = {
+    method: 'post',
+    mode: 'cors',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      bonusType: arg.bonusType,
+      isEffectBonus: arg.isEffectBonus,
+      isUsed: arg.isUsed,
+    }),
+  };
+
+  return callApi(`${RESTFUL_SERVER}/crm/customer/customer_list_new.json?token=${token}`,
+    config,
+    getPerformListRequest,
+    getPerformListSuccess,
+    getPerformListFail
   );
 }
 

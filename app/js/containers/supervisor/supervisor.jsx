@@ -147,135 +147,137 @@ class Supervisor extends React.Component {
     render() {
         const token = loadIdToken();
         return (
-            <div className="supervisor flex column">
-                <div className="flex header column">
-                    <div className="flex center between">
-                        <span className="flex">{token.name}</span>
-                        <span className="flex center font26">督导系统</span>
-                        <span className="flex negative-margin w50 end">
-                            <HMSelect text="门店" data={this.state.storeList} selectEmit={this.selectClick}></HMSelect>
-                            {/* <HMSelect text="test"></HMSelect> */}
-                        </span>
-                    </div>
-                    <div className="flex total around">
-                        <div className="flex center column">
-                            <span className="flex orange">{this.state.storeList.length}</span>
-                            <span className="flex">门店数量</span>
+            <div className="container-scrollable">
+                <div className="supervisor flex column">
+                    <div className="flex header column">
+                        <div className="flex center between">
+                            <span className="flex">{token.name}</span>
+                            <span className="flex center font26">督导系统</span>
+                            <span className="flex negative-margin w50 end">
+                                <HMSelect text="门店" data={this.state.storeList} selectEmit={this.selectClick}></HMSelect>
+                                {/* <HMSelect text="test"></HMSelect> */}
+                            </span>
                         </div>
-                        <div className="flex center column">
-                            <span className="flex orange">{this.state.guideNum}</span>
-                            <span className="flex">导购数量</span>
-                        </div>
-                        {/* <div className="flex w33 center column">
+                        <div className="flex total around">
+                            <div className="flex center column">
+                                <span className="flex orange">{this.state.storeList.length}</span>
+                                <span className="flex">门店数量</span>
+                            </div>
+                            <div className="flex center column">
+                                <span className="flex orange">{this.state.guideNum}</span>
+                                <span className="flex">导购数量</span>
+                            </div>
+                            {/* <div className="flex w33 center column">
                             <span className="flex orange">0</span>
                             <span className="flex">维护会员数量</span>
                         </div> */}
-                    </div>
-                </div>
-                <div className="main">
-                    <div className="flex totday-sale radius column">
-                        <div className="flex sale-header between center">
-                            <span className="flex f12">今日经营数据</span>
-                            <span className="flex" onClick={this.todayClick}>></span>
-                        </div>
-                        <div className="flex sale-table column">
-                            <div className="flex row around table-row">
-                                <span className="flex table-item center gray f12">经营项</span>
-                                <span className="flex table-item center gray f12">今日</span>
-                                <span className="flex table-item center gray f12">昨日</span>
-                            </div>
-                            <div className="flex row around table-row">
-                                <span className="flex table-item center f12">销售额</span>
-                                <span className="flex orange table-item center">{Number(this.state.Sale.today.total).toLocaleString()}</span>
-                                <span className="flex table-item center">{Number(this.state.Sale.yesterday.total).toLocaleString()}</span>
-                            </div>
-                            <div className="flex row around table-row">
-                                <span className="flex table-item center f12">订单数</span>
-                                <span className="flex orange table-item center">{this.state.Order.today.total}</span>
-                                <span className="flex table-item center">{this.state.Order.yesterday.total}</span>
-                            </div>
-                            <div className="flex row around table-row">
-                                <span className="flex table-item center f12">交易会员数</span>
-                                <span className="flex orange table-item center">{this.state.TransMember.today.total}</span>
-                                <span className="flex table-item center">{this.state.TransMember.yesterday.total}</span>
-                            </div>
-                            <div className="flex row around table-row">
-                                <span className="flex table-item center f12">客单价</span>
-                                <span className="flex orange table-item center">{Number(this.state.Single.today.total).toLocaleString()}</span>
-                                <span className="flex table-item center">{Number(this.state.Single.yesterday.total).toLocaleString()}</span>
-                            </div>
                         </div>
                     </div>
-                    <div className="flex month-sale radius column">
-                        <div className="flex sale-header between center">
-                            <span className="flex f12">月度经营数据</span>
-                            <span className="flex" onClick={this.monthClick}>></span>
+                    <div className="main">
+                        <div className="flex totday-sale radius column">
+                            <div className="flex sale-header between center">
+                                <span className="flex f12">今日经营数据</span>
+                                <span className="flex" onClick={this.todayClick}>></span>
+                            </div>
+                            <div className="flex sale-table column">
+                                <div className="flex row around table-row">
+                                    <span className="flex table-item center gray f12">经营项</span>
+                                    <span className="flex table-item center gray f12">今日</span>
+                                    <span className="flex table-item center gray f12">昨日</span>
+                                </div>
+                                <div className="flex row around table-row">
+                                    <span className="flex table-item center f12">销售额</span>
+                                    <span className="flex orange table-item center">{Number(this.state.Sale.today.total).toLocaleString()}</span>
+                                    <span className="flex table-item center">{Number(this.state.Sale.yesterday.total).toLocaleString()}</span>
+                                </div>
+                                <div className="flex row around table-row">
+                                    <span className="flex table-item center f12">订单数</span>
+                                    <span className="flex orange table-item center">{this.state.Order.today.total}</span>
+                                    <span className="flex table-item center">{this.state.Order.yesterday.total}</span>
+                                </div>
+                                <div className="flex row around table-row">
+                                    <span className="flex table-item center f12">交易会员数</span>
+                                    <span className="flex orange table-item center">{this.state.TransMember.today.total}</span>
+                                    <span className="flex table-item center">{this.state.TransMember.yesterday.total}</span>
+                                </div>
+                                <div className="flex row around table-row">
+                                    <span className="flex table-item center f12">客单价</span>
+                                    <span className="flex orange table-item center">{Number(this.state.Single.today.total).toLocaleString()}</span>
+                                    <span className="flex table-item center">{Number(this.state.Single.yesterday.total).toLocaleString()}</span>
+                                </div>
+                            </div>
                         </div>
-                        <div className="flex sale-table column">
-                            <div className="flex row around table-row">
-                                <span className="flex table-item center gray f12">经营项</span>
-                                <span className="flex table-item center gray f12">本月<span className="font10 red">截止昨日</span></span>
-                                <span className="flex table-item center gray f12">上月</span>
+                        <div className="flex month-sale radius column">
+                            <div className="flex sale-header between center">
+                                <span className="flex f12">月度经营数据</span>
+                                <span className="flex" onClick={this.monthClick}>></span>
                             </div>
-                            <div className="flex row around table-row">
-                                <span className="flex table-item center f12">销售额</span>
-                                <span className="flex orange table-item center">{Number(this.state.Sale.currentmonth.total).toLocaleString()}</span>
-                                <span className="flex table-item center">{Number(this.state.Sale.lastmonth.total).toLocaleString()}</span>
-                            </div>
-                            <div className="flex row around table-row">
-                                <span className="flex table-item center f12">订单数</span>
-                                <span className="flex orange table-item center">{this.state.Order.currentmonth.total}</span>
-                                <span className="flex table-item center">{this.state.Order.lastmonth.total}</span>
-                            </div>
-                            <div className="flex row around table-row">
-                                <span className="flex table-item center f12">交易会员数</span>
-                                <span className="flex orange table-item center">{this.state.TransMember.currentmonth.total}</span>
-                                <span className="flex table-item center">{this.state.TransMember.lastmonth.total}</span>
-                            </div>
-                            <div className="flex row around table-row">
-                                <span className="flex table-item center f12">客单价</span>
-                                <span className="flex orange table-item center">{Number(this.state.Single.currentmonth.total).toLocaleString()}</span>
-                                <span className="flex table-item center">{Number(this.state.Single.lastmonth.total).toLocaleString()}</span>
+                            <div className="flex sale-table column">
+                                <div className="flex row around table-row">
+                                    <span className="flex table-item center gray f12">经营项</span>
+                                    <span className="flex table-item center gray f12">本月<span className="font10 red">截止昨日</span></span>
+                                    <span className="flex table-item center gray f12">上月</span>
+                                </div>
+                                <div className="flex row around table-row">
+                                    <span className="flex table-item center f12">销售额</span>
+                                    <span className="flex orange table-item center">{Number(this.state.Sale.currentmonth.total).toLocaleString()}</span>
+                                    <span className="flex table-item center">{Number(this.state.Sale.lastmonth.total).toLocaleString()}</span>
+                                </div>
+                                <div className="flex row around table-row">
+                                    <span className="flex table-item center f12">订单数</span>
+                                    <span className="flex orange table-item center">{this.state.Order.currentmonth.total}</span>
+                                    <span className="flex table-item center">{this.state.Order.lastmonth.total}</span>
+                                </div>
+                                <div className="flex row around table-row">
+                                    <span className="flex table-item center f12">交易会员数</span>
+                                    <span className="flex orange table-item center">{this.state.TransMember.currentmonth.total}</span>
+                                    <span className="flex table-item center">{this.state.TransMember.lastmonth.total}</span>
+                                </div>
+                                <div className="flex row around table-row">
+                                    <span className="flex table-item center f12">客单价</span>
+                                    <span className="flex orange table-item center">{Number(this.state.Single.currentmonth.total).toLocaleString()}</span>
+                                    <span className="flex table-item center">{Number(this.state.Single.lastmonth.total).toLocaleString()}</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="flex month-new radius between">
-                        <div className="flex around new-text">
+                        <div className="flex month-new radius between">
+                            <div className="flex around new-text">
+                                <div className="flex column center">
+                                    <span className="flex orange">{this.state.newMember.Baby + this.state.newMember.Mom}</span>
+                                    <span className="flex f12">今日新客开发情况</span>
+                                </div>
+                                <div className="flex column center">
+                                    <span className="flex">{this.state.newMember.Mom} </span>
+                                    <span className="flex f12">孕妈</span>
+                                </div>
+                                <div className="flex column center">
+                                    <span className="flex">{this.state.newMember.Baby} </span>
+                                    <span className="flex f12">萌宝</span>
+                                </div>
+                            </div>
+                            <div className="flex center">
+                                <span className="flex" onClick={this.newMemberClick}>></span>
+                            </div>
+                        </div>
+                        <div className="flex store-sale radius between">
                             <div className="flex column center">
-                                <span className="flex orange">{this.state.newMember.Baby + this.state.newMember.Mom}</span>
-                                <span className="flex f12">今日新客开发情况</span>
+                                <span className="flex f12">销售机会跟进统计</span>
                             </div>
                             <div className="flex column center">
-                                <span className="flex">{this.state.newMember.Mom} </span>
-                                <span className="flex f12">孕妈</span>
+                                <span className="flex orange">{this.state.Follow}</span>
+                                <span className="flex f12">跟进数</span>
                             </div>
                             <div className="flex column center">
-                                <span className="flex">{this.state.newMember.Baby} </span>
-                                <span className="flex f12">萌宝</span>
+                                <span className="flex">{this.state.Chance}</span>
+                                <span className="flex f12">应跟进数</span>
                             </div>
-                        </div>
-                        <div className="flex center">
-                            <span className="flex" onClick={this.newMemberClick}>></span>
-                        </div>
-                    </div>
-                    <div className="flex store-sale radius between">
-                        <div className="flex column center">
-                            <span className="flex f12">销售机会跟进统计</span>
-                        </div>
-                        <div className="flex column center">
-                            <span className="flex orange">{this.state.Follow}</span>
-                            <span className="flex f12">跟进数</span>
-                        </div>
-                        <div className="flex column center">
-                            <span className="flex">{this.state.Chance}</span>
-                            <span className="flex f12">应跟进数</span>
-                        </div>
-                        <div className="flex column center">
-                            <span className="flex">{this.state.Percentage}%</span>
-                            <span className="flex f12">完成度</span>
-                        </div>
-                        <div className="flex center">
-                            <span className="flex" onClick={this.saleChanceClick}>></span>
+                            <div className="flex column center">
+                                <span className="flex">{this.state.Percentage}%</span>
+                                <span className="flex f12">完成度</span>
+                            </div>
+                            <div className="flex center">
+                                <span className="flex" onClick={this.saleChanceClick}>></span>
+                            </div>
                         </div>
                     </div>
                 </div>

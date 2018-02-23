@@ -13,7 +13,7 @@ import {
 } from 'amazeui-touch';
 
 import {
-  fetchALLCoupons,
+  fetchALLCoupons, performUserList,
 } from '../../../actions/users/performance';
 
 // DOM Utils.
@@ -26,13 +26,15 @@ import DefaultHeader from '../../../components/hm-default-header/DefaultHeader.j
 
 import './performanceCoupon.scss';
 
+
+/* eslint no-script-url: [0] */
+
 class PerformanceCoupon extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false,
     };
-    this.handleOpen = this.handleOpen.bind(this);
+    this.viewDetail = this.viewDetail.bind(this);
   }
 
   componentDidMount() {
@@ -40,20 +42,58 @@ class PerformanceCoupon extends React.Component {
     dispatch(fetchALLCoupons());
   }
 
-  handleOpen(e) {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    });
+  viewDetail(item, e) {
+    if (item.used === 0 && item.num === 0) return;
+    let effect = null;
+    let arg = {};
+    const { dispatch } = this.props;
+    if (item.use_end_date < (new Date().valueOf())) {
+      effect = '0';
+    } else {
+      effect = '1';
+    }
+    switch (e) {
+      case 'send':
+        arg = {
+          bonusType: item.bonus_type_id || null,
+          isEffectBonus: effect || null,
+          isUsed: 0,
+        };
+        break;
+      case 'use':
+        arg = {
+          bonusType: item.bonus_type_id || null,
+          isEffectBonus: effect || null,
+          isUsed: 0,
+        };
+        break;
+      default: arg = {
+        bonusType: null,
+        isEffectBonus: null,
+        isUsed: null,
+      };
+    }
+    // console.log(e);
+    dispatch(performUserList(arg));
   }
-
   render() {
     const { user } = this.props;
     const { allCoupons, isAllCouponGet } = user;
-    let contentJSX;
+    const valid = [];
+    let contentJSX = null;
+    let dueJSX = null;
+    const dueDate = [];
     if (isAllCouponGet) {
       if (allCoupons && allCoupons.length > 0) {
-        contentJSX = allCoupons.map((item, idx) => {
-          const key = `key-${idx}`;
+        allCoupons.forEach((item, i) => {
+          if (item.use_end_date > (new Date().valueOf())) {
+            valid.push(item);
+          } else {
+            dueDate.push(item);
+          }
+        });
+        contentJSX = valid.map((item, i) => {
+          const key = `key-${i}`;
           return (
             <li key={key}>
               <div className="coupon-main">
@@ -64,28 +104,114 @@ class PerformanceCoupon extends React.Component {
                 <div className="coupon-name">
                   <p>{item.bonusName}</p>
                   <p className="state">总券数：{item.count}</p>
-                  <div className="send-time">
-                    <span className="state">已发放：{item.num}</span>
+                  <span className="end_date">
+                    有效期至：{moment(item.use_end_date).format('YYYY-MM-DD')}
+                  </span>
+                </div>
+                <div className="coupon-link">
+                  <div className="send-time" >
+                    <a href="javascript:void(0)" onClick={() => this.viewDetail(item, 'send')}>
+                      <span className="state">已发放：{item.num}</span>
+                      <span className="icon icon-right-nav" />
+                    </a>
                   </div>
                   <div className="invalide-time">
-                    <span className="state">已使用：{item.used || 0}</span>
-                    <span>有效期至：{moment(item.use_end_date).format('YYYY-MM-DD')}</span>
+                    <a href="javascript:void(0)" onClick={() => this.viewDetail(item, 'use')}>
+                      <span className="state">已使用：{item.used || 0}</span>
+                      <span className="icon icon-right-nav" />
+                    </a>
                   </div>
                 </div>
               </div>
               {
                 item.remarks && item.remarks !== '' &&
-                <div
-                  className={this.state.isOpen ? 'coupon-describe' : 'coupon-describe open'}
-                  onClick={this.handleOpen}
-                >
+                <div className="remarks">
                   备注：{item.remarks}
-                  <span className="icon icon-down-nav" />
                 </div>
               }
             </li>
           );
         });
+        dueJSX = dueDate.map((item, i) => {
+          const key = `key-${i}`;
+          return (
+            <li key={key} className="time_up">
+              <div className="coupon-main">
+                <div className="coupon-price-due">
+                  <p><span>￥</span><b>{item.money}</b></p>
+                  <span>满{item.min}元使用</span>
+                </div>
+                <div className="coupon-name">
+                  <p>{item.bonusName}</p>
+                  <p className="state">总券数：{item.count}</p>
+                  <span className="end_date">
+                    有效期至：{moment(item.use_end_date).format('YYYY-MM-DD')}
+                  </span>
+                </div>
+                <div className="coupon-link">
+                  <div className="send-time">
+                    <a href="javascript:void(0)" onClick={() => this.viewDetail(item, 'send')}>
+                      <span className="state">已发放：{item.num}</span>
+                      <span className="icon icon-right-nav" />
+                    </a>
+                  </div>
+                  <div className="invalide-time" >
+                    <a href="javascript:void(0)" onClick={() => this.viewDetail(item, 'use')}>
+                      <span className="state">已使用：{item.used || 0}</span>
+                      <span className="icon icon-right-nav" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              {
+                item.remarks && item.remarks !== '' &&
+                <div className="remarks">
+                  备注：{item.remarks}
+                </div>
+              }
+            </li>
+          );
+        });
+        // contentJSX = allCoupons.map((item, idx) => {
+        //   const key = `key-${idx}`;
+        //   return (
+        //     <li key={key}>
+        //       <div className="coupon-main">
+        //         <div className="coupon-price">
+        //           <p><span>￥</span><b>{item.money}</b></p>
+        //           <span>满{item.min}元使用</span>
+        //         </div>
+        //         <div className="coupon-name">
+        //           <p>{item.bonusName}</p>
+        //           <p className="state">总券数：{item.count}</p>
+        //           <span className="end_date">
+        //             有效期至：{moment(item.use_end_date).format('YYYY-MM-DD')}
+        //           </span>
+        //         </div>
+        //         <div className="coupon-link">
+        //           <div className="send-time">
+        //             <a href="#/">
+        //               <span className="state">已发放：{item.num}</span>
+        //               <span className="icon icon-right-nav" />
+        //             </a>
+        //           </div>
+        //           <div className="invalide-time">
+        //             <a href="#/">
+        //               <span className="state">已使用：{item.used || 0}</span>
+        //               <span className="icon icon-right-nav" />
+        //             </a>
+        //           </div>
+        //         </div>
+        //       </div>
+        //       {
+        //         item.remarks && item.remarks !== '' &&
+        //         <div className="remarks">
+        //           备注：{item.remarks}
+        //         </div>
+        //       }
+        //     </li>
+        //   );
+        // });
       } else {
         contentJSX = (
           <li className="hm-null">
@@ -103,9 +229,26 @@ class PerformanceCoupon extends React.Component {
     return (
       <div className="hm-performance-coupon-container">
         <DefaultHeader title="优惠券包" history={this.props.history} />
-        <ul className="hm-performance-coupon-container">
-          {contentJSX}
-        </ul>
+        <Tabs
+          className="hm-manager-home-nav"
+        >
+          <Tabs.Item
+            title="有效券"
+            navStyle="alert"
+          >
+            <ul className="hm-performance-coupon-container">
+              {contentJSX}
+            </ul>
+          </Tabs.Item>
+          <Tabs.Item
+            title="过期券"
+            navStyle="alert"
+          >
+            <ul className="hm-performance-coupon-container">
+              {dueJSX}
+            </ul>
+          </Tabs.Item>
+        </Tabs>
       </div>
     );
   }

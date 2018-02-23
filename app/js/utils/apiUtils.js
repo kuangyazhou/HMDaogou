@@ -4,7 +4,7 @@ import moment from 'moment';
 require('es6-promise').polyfill();
 
 // export const RESTFUL_SERVER = 'http://crmbackservice.weihaojiao.com';
-export const RESTFUL_SERVER = 'http://crmbackservice.hemiao100.com';
+// export const RESTFUL_SERVER = 'http://crmbackservice.hemiao100.com';
 // export const RESTFUL_SERVER = 'http://melody.weihaojiao.com/hemiao-crm-backservice';
 // export const RESTFUL_SERVER = 'http://crmbackservice.hemiao100.com';
 /* eslint no-unused-expressions: [0] */
@@ -15,12 +15,14 @@ export const RESTFUL_SERVER = 'http://crmbackservice.hemiao100.com';
 /* eslint react/jsx-indent: [0] */
 /* eslint max-len: [0] */
 /* eslint eol-last: [0] */
+// 熊伟达
+export const RESTFUL_SERVER = 'http://192.168.188.167:8070';
 // 梁峰
 // export const RESTFUL_SERVER = 'http://192.168.188.196:8080/hemiao-crm-backservice';
 // 陈红帅
 // export const RESTFUL_SERVER = 'http://192.168.188.180:8080/hemiao-back';
 // 李思勇
-// export const RESTFUL_SERVER = 'http://192.168.188.132:8084';
+export const RESTFUL_SERVER = 'http://192.168.188.132:8084';
 // 全局默认的分页参数
 export const DEFAULT_QUERY_PARAMS = {
     pageSize: 15,

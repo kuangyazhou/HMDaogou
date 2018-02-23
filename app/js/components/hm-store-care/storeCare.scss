@@ -2,6 +2,14 @@
     .hm-card-container:last-child {
         margin-bottom: 3.0625rem;
     }
+    .hm-store-coupon-detail {
+        .hm-card-body {
+            padding: 0;
+        }
+        .hm-card-container:last-child {
+            margin-bottom: 1rem;
+        }
+    }
     .hm-card-header-label {
         .fa {
             background: #665AA6;
@@ -73,7 +81,8 @@
                 color: #8C8C8C;
             }
         }
-        .by-phone, .by-message {
+        .by-phone,
+        .by-message {
             border-right: 1px solid #F2F2F2;
         }
     }

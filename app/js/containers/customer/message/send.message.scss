@@ -3,6 +3,32 @@
         margin-top: .5rem;
         margin-bottom: 0;
     }
+    .template {
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+        flex-flow: row wrap;
+        -webkit-flex-flow: row wrap;
+        padding: .5rem;
+        margin-bottom: 1rem;
+        .btn {
+            flex-basis: 28%;
+            -webkit-flex-basis: 28%;
+            outline: 0;
+            background: #E5E5E5;
+            color: #9F9F9F;
+            border-radius: 3px;   
+            font-size: .8rem;
+            padding: .2rem 0;         
+        }
+        .btn.active, .btn:active, .btn:hover {
+            color: #F6595E;
+            border: 1px solid #F6595E;
+            background: #fff;
+            border-radius: 3px;
+        }
+    }
     .group-header {
         padding: 0.3125rem 1rem;
     }
